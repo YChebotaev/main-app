@@ -1,0 +1,132 @@
+.round {
+  padding-bottom: 15px;
+}
+
+.aboutWrapper {
+  padding: 0 20px;
+}
+
+.tabs {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.tabsWrapper {
+  margin-top: 20px;
+}
+
+.roundBlockWrapper {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.roundBlock {
+}
+
+.header {
+  color: #AD81F7;
+}
+
+.roundText {
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.roundAdvantages {
+  margin-top: 10px;
+  display: flex;
+  justify-content: stretch;
+}
+
+.roundAdvantage {
+}
+
+.advantageHeader {
+  color: #AD81F7;
+}
+
+.advantageText {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.graphWrapper {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.graph {
+  background: rgba(176, 120, 231, 0.2);
+  border-radius: 10px;
+  height: 148px;
+}
+
+.processBlockWrapper {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.processBlock {
+  margin-top: 15px;
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+
+.processLine {
+  display: flex;
+  gap: 20px;
+}
+
+.processNumber {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #AD81F7;
+}
+
+.processText {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.faqBlockWrapper {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.faqBlock {
+  margin-top: 15px;
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+
+.faqItem {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.faqTitle {
+  font-size: 16px;
+}
+
+.faqText {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.8);
+}

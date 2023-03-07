@@ -1,0 +1,43 @@
+.tabs {
+  background: linear-gradient(
+      162.17deg,
+      rgba(116, 77, 181, 0) -0.53%,
+      rgba(245, 153, 68, 0.09) 79.58%
+    ),
+    rgba(176, 120, 231, 0.1);
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+}
+
+.tab {
+  flex-grow: 1;
+  padding: 5px 0;
+  background-color: #8661c5;
+  color: #ffffff;
+  border: none;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.tab:first-of-type {
+  border-top-left-radius: 10px;
+}
+
+.tab:last-of-type {
+  border-top-right-radius: 10px;
+}
+
+.tabActive {
+  background-color: transparent;
+  color: #ad81f7;
+}
+
+.content {
+}

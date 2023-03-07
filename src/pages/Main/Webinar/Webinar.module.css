@@ -1,0 +1,78 @@
+.webinar {
+  background: rgba(176, 120, 231, 0.2);
+  border: 3px solid rgba(176, 120, 231, 0.5);
+  border-radius: 10px;
+}
+
+.usersListWrapper {
+  padding: 15px 15px 0 15px;
+}
+
+.usersList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  flex-flow: column;
+}
+
+.userAvatar {
+  background-image: url("../../../assets/images/webinar-user-avatar-dummy.png");
+  background-size: cover;
+  width: 60px;
+  height: 80px;
+}
+
+.userName {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #ffffff;
+}
+
+.timingListWrapper {
+  padding: 15px 15px 0 15px;
+}
+
+.timing {}
+
+.timingList {}
+
+.timingHeader {
+  display: flex;
+  gap: 10px;
+}
+
+.timingTime {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #C184FF;
+}
+
+.timingDescr {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.timingTitle {
+  margin-top: 5px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.buttonWrapper {
+  padding: 15px;
+}

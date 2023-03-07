@@ -1,0 +1,23 @@
+.arrow {
+  border: none;
+  background: transparent;
+  background-size: cover;
+  width: 10px;
+  height: 6px;
+}
+
+.arrowHighlighted.arrowOpened {
+  background-image: url("../../../assets/images/selector-arrow-up-highlighted.svg");
+}
+
+.arrowHighlighted.arrowClosed {
+  background-image: url("../../../assets/images/selector-arrow-down-highlighted.svg");
+}
+
+.arrowOpened {
+  background-image: url("../../../assets/images/selector-arrow-down.svg");
+}
+
+.arrowClosed {
+  background-image: url("../../../assets/images/selector-arrow-up.svg");
+}

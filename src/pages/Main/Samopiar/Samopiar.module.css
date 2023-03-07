@@ -1,0 +1,46 @@
+.samopiar {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.line {
+  display: flex;
+  gap: 10px;
+}
+
+.iconWrapper {}
+
+.icon {
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.icon1 {
+  background-image: url("../../../assets/images/samopiar-icon-mdk.png");
+}
+
+.icon2 {
+  background-image: url("../../../assets/images/samopiar-icon-money.png");
+}
+
+.icon3 {
+  background-image: url("../../../assets/images/samopiar-icon-cryptocurrency-blockchain.png");
+}
+
+.textWrapper {
+  padding-top: 10px;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.textHighlight {
+  color: #AD81F7;
+}

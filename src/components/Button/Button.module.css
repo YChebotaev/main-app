@@ -1,0 +1,16 @@
+.button {
+  background: linear-gradient(274.09deg, rgba(91, 10, 120, 0.5) 2.7%, rgba(173, 129, 247, 0.5) 98.26%), #8661C5;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}

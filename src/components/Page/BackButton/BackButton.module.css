@@ -1,0 +1,9 @@
+.backButton {
+}
+
+.backIcon {
+  background-size: cover;
+  width: 30px;
+  height: 24px;
+  background-image: url("../../../assets/images/page-back-button-icon-back.svg");
+}

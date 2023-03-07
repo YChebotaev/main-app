@@ -1,0 +1,98 @@
+.ratingsList {
+  display: flex;
+  gap: 10px;
+}
+
+.ratingsListWrapper {
+  overflow-x: scroll;
+}
+
+.item {
+  min-width: 232px;
+  background: rgba(176, 120, 231, 0.2);
+  border-radius: 10px;
+}
+
+.itemIconWrapper {
+  padding: 20px 10px;
+}
+
+.itemIcon {
+  background-size: cover;
+  width: 125px;
+  height: 20px;
+  background-image: url("../../../assets/images/rating-list-logo-dapp-radar.svg");
+}
+
+.itemBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.bodyIconWrapper {
+}
+
+.bodyIcon {
+  background-size: cover;
+  width: 42px;
+  height: 37px;
+  background-image: url("../../../assets/images/rating-list-logo-main.svg");
+}
+
+.bodyMainWrapper {
+}
+
+.itemName {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.itemVendor {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bodyGraphWrapper {
+  width: 102px;
+  height: 53px;
+  background: rgba(176, 120, 231, 0.16);
+  border-radius: 9px;
+}
+
+.itemGraph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemFooter {
+  margin-top: 10px;
+  padding: 0 10px 10px;
+}
+
+.footerText {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.footerHighlight {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ad81f7;
+}

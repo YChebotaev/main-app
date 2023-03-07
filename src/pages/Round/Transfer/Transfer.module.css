@@ -1,0 +1,47 @@
+.transfer {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  padding: 10px 15px;
+}
+
+.amountWrapper {
+  padding: 0 15px;
+}
+
+.bankWrapper {
+  padding: 0 15px;
+}
+
+.receiveWrapper {
+  padding: 0 15px;
+}
+
+.phoneWrapper {
+  padding: 0 15px;
+}
+
+.detailsLinkWrapper {
+  padding: 0 0 0 27px;
+}
+
+.detailsLink {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.buttonWrapper {
+}
+
+.button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+}

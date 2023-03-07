@@ -1,0 +1,66 @@
+.enterRound {
+  padding-bottom: 15px;
+}
+
+.headerWrapper {
+  padding: 10px 15px 0;
+}
+
+.textWrapper {
+  padding: 10px 15px 0;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.advantagesWrapper {
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+.advantages {
+  display: flex;
+  gap: 10px;
+}
+
+.advatage {
+}
+
+.advatageTitle {
+  color: #ad81f7;
+  text-transform: uppercase;
+}
+
+.advatageText {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.graphWrapper {
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+.graph {
+  background: rgba(176, 120, 231, 0.2);
+  border-radius: 10px;
+
+  height: 148px;
+}
+
+.buttonWrapper {
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+.button {
+  font-size: 18px;
+}

@@ -1,0 +1,46 @@
+.mediaList {
+  display: flex;
+  gap: 10px;
+}
+
+.mediaListWrapper {
+  overflow-x: scroll;
+}
+
+.item {
+  min-width: 140px;
+  background: rgba(176, 120, 231, 0.2);
+  border-radius: 10px;
+}
+
+.itemLogoWrapper {
+  padding: 15px 10px 0;
+}
+
+.itemLogo {
+  background-size: cover;
+}
+
+.itemLogo1 {
+  width: 60px;
+  height: 16px;
+  background-image: url("../../../assets/images/media-list-logo-rbc.svg");
+}
+
+.itemLogo2 {
+  width: 51px;
+  height: 18px;
+  background-image: url("../../../assets/images/media-list-logo-rb.svg");
+}
+
+.itemTextWrapper {
+  padding: 15px 10px;
+}
+
+.itemText {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}

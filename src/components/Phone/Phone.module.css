@@ -1,0 +1,41 @@
+.phone {
+}
+
+.columns {
+  display: flex;
+}
+
+.codeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+}
+
+.phoneWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.phoneInput {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  background: transparent;
+  padding: 8px 3px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.option {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}

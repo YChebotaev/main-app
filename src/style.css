@@ -1,0 +1,10 @@
+@import-normalize;
+
+:root {
+  font-family: "SF UI Display Medium";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

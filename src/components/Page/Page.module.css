@@ -1,0 +1,11 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(170.6deg, rgba(116, 77, 181, 0.2) 3.53%, rgba(0, 0, 0, 0) 87.54%), #18141A;
+}
+
+.logoWrapper {
+  padding-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

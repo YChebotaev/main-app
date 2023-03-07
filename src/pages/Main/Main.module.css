@@ -1,0 +1,36 @@
+.main {
+  padding-bottom: 10px;
+}
+
+.webinarWrapper {
+  margin-top: 5px;
+  padding: 0 20px;
+}
+
+.samopiarWrapper {
+  margin-top: 15px;
+  padding: 0 20px 0 40px;
+}
+
+.buttonWrapper {
+  margin-top: 15px;
+  padding: 0 20px;
+}
+
+.mediaWrapper {
+  margin-top: 25px;
+  padding: 0 20px;
+}
+
+.mediaListWrapper {
+  margin-top: 20px;
+}
+
+.ratingsWrapper {
+  margin-top: 25px;
+  padding: 0 20px;
+}
+
+.ratingsListWrapper {
+  margin-top: 20px;
+}

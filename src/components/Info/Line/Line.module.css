@@ -1,0 +1,31 @@
+.line {
+  display: flex;
+  gap: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12.5px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.left {
+  flex-grow: 0;
+}
+
+.right {
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  background-color: rgba(255, 255, 255, 0.31);
+  border-radius: 9px;
+}
+
+.iconColored {
+  background-color: #b27ce7;
+  background-image: url("../../../assets/images/info-icon-colored.png");
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: 0 1px;;
+}

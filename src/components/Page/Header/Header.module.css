@@ -1,0 +1,23 @@
+.header {
+  position: relative;
+  isolation: isolate;
+  height: 97px;
+}
+
+.logoWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  padding-top: 14px;
+}
+
+.backButtonWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 0px 25px;
+  inset: 0;
+}
