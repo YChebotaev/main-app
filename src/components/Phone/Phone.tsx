@@ -26,7 +26,7 @@ export const Phone: FC<{ control: Control }> = ({ control }) => {
   const { field } = useController({ control, name: "phone" });
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
-  const [countryCode, setCountryCode] = useState<string>("RU");
+  // const [countryCode, setCountryCode] = useState<string>("RU");
 
   return (
     <ControlComponent ref={setReferenceElement} className={classes.phone}>

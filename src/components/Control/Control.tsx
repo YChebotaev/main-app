@@ -1,4 +1,4 @@
-import { forwardRef, type FC, type ReactNode } from "react";
+import { forwardRef, type ReactNode } from "react";
 import cn from "classnames";
 
 import classes from "./Control.module.css";

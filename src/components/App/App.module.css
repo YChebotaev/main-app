@@ -1,0 +1,40 @@
+
+.app {
+}
+
+.appear {
+}
+
+.appearActive {
+}
+
+.appearDone {
+}
+
+.enter {
+  position: absolute;
+  z-index: 2;
+  transform: translate(100%, 0);
+}
+
+.enterActive {
+  transform: translate(0, 0);
+  transition: opacity 250ms ease-out, transform 250ms ease;
+}
+
+.enterDone {
+}
+
+.exit {
+  position: absolute;
+  z-index: 1;
+  transform: translate(0, 0);
+}
+
+.exitActive {
+  transform: translate(-100%, 0);
+  transition: opacity 250ms ease-out, transform 250ms ease;
+}
+
+.exitDone {
+}

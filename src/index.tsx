@@ -1,10 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router";
-import { Main } from "./pages/Main";
-import { Investments } from "./pages/Investments";
-import { Round } from './pages/Round'
+import { App } from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 
 import "./assets/fonts/sf-ui-display-cufonfonts-webfont/style.css";
@@ -17,11 +14,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/investments" element={<Investments />} />
-        <Route path="/investments/round" element={<Round />} />
-      </Routes>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
 );
