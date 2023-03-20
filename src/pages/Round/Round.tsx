@@ -6,6 +6,7 @@ import { Crypto } from "./Crypto";
 import { About } from "../../components/About";
 import { Page } from "../../components/Page";
 import { Header } from "../../components/Header";
+import graphExample from "../../assets/images/graph-example.svg";
 
 import classes from "./Round.module.css";
 import { Tabs } from "../../components/Tabs";
@@ -13,7 +14,7 @@ import { Tabs } from "../../components/Tabs";
 export const Round: FC = () => (
   <Page
     withBackButton
-    backButton={{ to: "/investments" }}
+    backButton={{ to: "/investments?back=true" }}
     className={classes.round}
   >
     <div className={classes.aboutWrapper}>
@@ -82,7 +83,7 @@ export const Round: FC = () => (
       </div>
     </div>
     <div className={classes.graphWrapper}>
-      <div className={classes.graph} />
+      <img src={graphExample} className={classes.graph} alt="" />
     </div>
     <div className={classes.processBlockWrapper}>
       <Header level={2} className={classes.header}>Процесс входа в ROUND</Header>

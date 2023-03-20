@@ -47,13 +47,11 @@
 .graphWrapper {
   margin-top: 15px;
   padding: 0 15px;
+  text-align: center;
 }
 
 .graph {
-  background: rgba(176, 120, 231, 0.2);
-  border-radius: 10px;
-
-  height: 148px;
+  width: 100%;
 }
 
 .buttonWrapper {

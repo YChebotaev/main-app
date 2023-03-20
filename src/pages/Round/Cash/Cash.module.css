@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column;
   gap: 20px;
-  padding: 10px 15px;
+  padding: 20px 0 10px;
 }
 
 .amountWrapper {
@@ -25,6 +25,10 @@
   padding: 0 15px;
 }
 
+.infoWrapper {
+  padding: 0 15px;
+}
+
 .detailsLinkWrapper {
   padding: 0 0 0 27px;
 }
@@ -39,6 +43,7 @@
 }
 
 .buttonWrapper {
+  padding: 0 15px;
 }
 
 .button {
@@ -48,4 +53,8 @@
   line-height: 24px;
   text-align: center;
   color: #ffffff;
+}
+
+.appendumWrapper {
+  padding: 0 15px;
 }

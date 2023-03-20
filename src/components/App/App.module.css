@@ -1,4 +1,3 @@
-
 .app {
 }
 
@@ -37,4 +36,41 @@
 }
 
 .exitDone {
+}
+
+.appearBack {
+}
+
+.appearActiveBack {
+}
+
+.appearDoneBack {
+}
+
+.enterBack {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-100%, 0);
+}
+
+.enterActiveBack {
+  transform: translate(0, 0);
+  transition: opacity 250ms ease-out, transform 250ms ease;
+}
+
+.enterDoneBack {
+}
+
+.exitBack {
+  position: absolute;
+  z-index: 1;
+  transform: translate(0, 0);
+}
+
+.exitActiveBack {
+  transform: translate(100%, 0);
+  transition: opacity 250ms ease-out, transform 250ms ease;
+}
+
+.exitDoneBack {
 }

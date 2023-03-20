@@ -1,5 +1,6 @@
 import { type FC } from "react";
 import { Routes, Route, useLocation } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import { Main } from "../../pages/Main";
@@ -10,21 +11,31 @@ import classes from "./App.module.css";
 
 export const App: FC = () => {
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const isBackNavigate = searchParams.get("back") === "true";
 
   return (
     <TransitionGroup component={null}>
       <CSSTransition
         key={location.key}
         classNames={{
-          appear: classes.appear,
-          appearActive: classes.appearActive,
-          appearDone: classes.appearDone,
-          enter: classes.enter,
-          enterActive: classes.enterActive,
-          enterDone: classes.enterDone,
-          exit: classes.exit,
-          exitActive: classes.exitActive,
-          exitDone: classes.exitDone,
+          appear: isBackNavigate ? classes.appearBack : classes.appear,
+          appearActive: isBackNavigate
+            ? classes.appearActiveBack
+            : classes.appearActive,
+          appearDone: isBackNavigate
+            ? classes.appearDoneBack
+            : classes.appearDone,
+          enter: isBackNavigate ? classes.enterBack : classes.enter,
+          enterActive: isBackNavigate
+            ? classes.enterActiveBack
+            : classes.enterActive,
+          enterDone: isBackNavigate ? classes.enterDoneBack : classes.enterDone,
+          exit: isBackNavigate ? classes.exitBack : classes.exit,
+          exitActive: isBackNavigate
+            ? classes.exitActiveBack
+            : classes.exitActive,
+          exitDone: isBackNavigate ? classes.exitDoneBack : classes.exitDone,
         }}
         timeout={250}
       >

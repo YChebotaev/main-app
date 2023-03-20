@@ -1,0 +1,15 @@
+.progress {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: rgba(173, 129, 247, 0.4);
+}
+
+.activeDot {
+  background-color: #ad81f7;
+}

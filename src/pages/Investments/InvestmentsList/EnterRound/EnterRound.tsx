@@ -1,6 +1,8 @@
 import { type FC } from "react";
+
 import { Button } from "../../../../components/Button";
 import { Header } from "../../../../components/Header";
+import graphExample from "../../../../assets/images/graph-example.svg";
 
 import classes from "./EnterRound.module.css";
 
@@ -34,12 +36,12 @@ export const EnterRound: FC = () => (
       </div>
     </div>
     <div className={classes.graphWrapper}>
-      <div className={classes.graph}>
-
-      </div>
+      <img className={classes.graph} src={graphExample} alt="" />
     </div>
     <div className={classes.buttonWrapper}>
-      <Button to="/investments/round" className={classes.button}>Войти в ROUND</Button>
+      <Button to="/investments/round" className={classes.button}>
+        Войти в ROUND
+      </Button>
     </div>
   </div>
 );

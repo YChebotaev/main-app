@@ -1,0 +1,33 @@
+.instruction {
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.slideWrapper {
+  position: relative;
+  margin-top: 15px;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.footerLeft {
+}
+
+.footerRight {
+}
+
+.button {
+  font-size: 14px;
+  padding: 5px 15px;
+}

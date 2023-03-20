@@ -2,6 +2,7 @@ import { type FC } from "react";
 
 import { Header } from "../../../../components/Header";
 import { Button } from "../../../../components/Button";
+import graphExample from "../../../../assets/images/graph-example.svg";
 
 import classes from "./BuyToken.module.css";
 
@@ -17,7 +18,7 @@ export const BuyToken: FC = () => (
       </div>
     </div>
     <div className={classes.graphWrapper}>
-      <div className={classes.graph}></div>
+      <img className={classes.graph} src={graphExample} alt="" />
     </div>
     <div className={classes.buttonWrapper}>
       <Button className={classes.button}>Купить токен</Button>

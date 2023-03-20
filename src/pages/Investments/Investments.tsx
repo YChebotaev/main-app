@@ -8,7 +8,7 @@ import { Header } from "../../components/Header";
 import classes from "./Investments.module.css";
 
 export const Investments: FC = () => (
-  <Page withBackButton backButton={{ to: "/" }} className={classes.investments}>
+  <Page withBackButton backButton={{ to: "/?back=true" }} className={classes.investments}>
     <div className={classes.aboutWrapper}>
       <About />
     </div>

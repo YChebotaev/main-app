@@ -1,2 +1,23 @@
 .crypto {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  padding: 20px 0 10px;
+}
+
+.amountWrapper {
+  padding: 0 15px;
+}
+
+.receiveWrapper {
+  padding: 0 15px;
+}
+
+.infoWrapper {
+  padding: 0 15px;
+}
+
+.instructionWrapper {
+  padding: 10px 10px 0px;
+  border-top: 1px solid #1D1723;
 }

@@ -28,22 +28,24 @@ export const Transfer: FC = () => {
       <div className={classes.phoneWrapper}>
         <Phone control={control} />
       </div>
-      <Info>
-        <Info.Line>
-          <b>Курс</b>
-          {"  "}1 RUB = <b>7.99 MAIN</b>
-        </Info.Line>
-        <Info.Line>Время перевода: 15 мин.</Info.Line>
-        <Info.Line colored>
-          Курс будет уточнён на момент старта сделки
-        </Info.Line>
-        <Info.Line colored>
-          <b>
-            При входе в ROUND на эту сумму вы получите 95877 MAIN (
-            <span style={{ color: "green" }}>+20%</span>)
-          </b>
-        </Info.Line>
-      </Info>
+      <div className={classes.infoWrapper}>
+        <Info>
+          <Info.Line>
+            <b>Курс</b>
+            {"  "}1 RUB = <b>7.99 MAIN</b>
+          </Info.Line>
+          <Info.Line>Время перевода: 15 мин.</Info.Line>
+          <Info.Line colored>
+            Курс будет уточнён на момент старта сделки
+          </Info.Line>
+          <Info.Line colored>
+            <b>
+              При входе в ROUND на эту сумму вы получите 95877 MAIN (
+              <span style={{ color: "green" }}>+20%</span>)
+            </b>
+          </Info.Line>
+        </Info>
+      </div>
       <div className={classes.detailsLinkWrapper}>
         <a href="/" className={classes.detailsLink}>
           Подробнее
@@ -52,7 +54,9 @@ export const Transfer: FC = () => {
       <div className={classes.buttonWrapper}>
         <Button className={classes.button}>Отправить заявку</Button>
       </div>
-      <Appendum />
+      <div className={classes.appendumWrapper}>
+        <Appendum />
+      </div>
     </div>
   );
 };

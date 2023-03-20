@@ -63,9 +63,7 @@
 }
 
 .graph {
-  background: rgba(176, 120, 231, 0.2);
-  border-radius: 10px;
-  height: 148px;
+  width: 100%;
 }
 
 .processBlockWrapper {
