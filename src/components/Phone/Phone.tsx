@@ -23,7 +23,7 @@ const COUNTRIES = [
 ];
 
 export const Phone: FC<{ control: Control }> = ({ control }) => {
-  const { field } = useController({ control, name: "phone" });
+  const { field } = useController({ control, name: "phoneNumber" });
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
   // const [countryCode, setCountryCode] = useState<string>("RU");

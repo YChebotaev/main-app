@@ -9,9 +9,10 @@ export const Button: FC<{
   unstyled?: boolean;
   className?: string;
   style?: CSSProperties;
+  type?: 'button' | 'submit' | 'reset'
   children: ReactNode;
   onClick?(): void;
-}> = ({ to, unstyled, className, style, children, onClick }) => {
+}> = ({ to, unstyled, className, style, type, children, onClick }) => {
   if (to) {
     return (
       <Link
@@ -28,6 +29,7 @@ export const Button: FC<{
       <button
         className={cn(!unstyled && classes.button, className)}
         style={style}
+        type={type}
         onClick={onClick}
       >
         {children}

@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { VictoryChart, VictoryLine } from "victory";
+import { VictoryLine } from "victory";
 
 import dummyGraphImage from "../../../assets/images/rating-list-graph-dummy.svg";
 

@@ -1,11 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { App } from "./components/App";
 import reportWebVitals from "./reportWebVitals";
+import { createApiClient } from "./utils";
+import { useApiClient } from "./hooks";
 
 import "./assets/fonts/sf-ui-display-cufonfonts-webfont/style.css";
 import "./style.css";
+
+const queryClient = new QueryClient();
+const apiClient = createApiClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -13,9 +19,13 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <useApiClient.Provider client={apiClient}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </useApiClient.Provider>
+    </QueryClientProvider>
   </React.StrictMode>,
 );
 

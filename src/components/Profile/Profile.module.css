@@ -1,0 +1,96 @@
+.profile {
+  display: flex;
+  gap: 20px;
+  background: rgba(173, 129, 247, 0.2);
+  border-radius: 8px;
+}
+
+.left {
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.right {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  flex-grow: 1;
+}
+
+.avatar {
+  border-radius: 100%;
+}
+
+.smallAvatar {
+  height: 50px;
+}
+
+.name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.button {
+  background: transparent;
+  border: 1px solid #ad81f7;
+  color: #ad81f7;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ad81f7;
+  padding: 5px 0;
+}
+
+.walletInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.walletIdWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.walletIdIcon {
+  width: 17px;
+  height: 17px;
+  background-image: url("../../assets/images/profile-wallet-id-icon.png");
+  border-radius: 100%;
+  background-size: cover;
+}
+
+.walletId {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.unbindWrapper {
+}
+
+.unbind {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: #ad81f7;
+}

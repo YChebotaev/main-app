@@ -1,27 +1,28 @@
 import { type FC } from "react";
 
-import { Transfer } from "./Transfer";
+import graphExample from "../../assets/images/graph-example.svg";
+// import { About } from "../../components/About";
+import { Header } from "../../components/Header";
+import { Page } from "../../components/Page";
+import { Tabs } from "../../components/Tabs";
 import { Cash } from "./Cash";
 import { Crypto } from "./Crypto";
-import { About } from "../../components/About";
-import { Page } from "../../components/Page";
-import { Header } from "../../components/Header";
-import graphExample from "../../assets/images/graph-example.svg";
+import { Transfer } from "./Transfer";
+import { Profile } from '../../components/Profile'
 
-import classes from "./Round.module.css";
-import { Tabs } from "../../components/Tabs";
+import classes from "./Buy.module.css";
 
-export const Round: FC = () => (
+export const Buy: FC = () => (
   <Page
     withBackButton
     backButton={{ to: "/investments?back=true" }}
     className={classes.round}
   >
-    <div className={classes.aboutWrapper}>
-      <About />
+    <div className={classes.profileWrapper}>
+      <Profile />
     </div>
     <div className={classes.tabs}>
-      <Header>Вход в ROUND</Header>
+      <Header>Покупка токена по рынку</Header>
       <div className={classes.tabsWrapper}>
         <Tabs
           initialTab="transfer"
@@ -86,36 +87,58 @@ export const Round: FC = () => (
       <img src={graphExample} className={classes.graph} alt="" />
     </div>
     <div className={classes.processBlockWrapper}>
-      <Header level={2} className={classes.header}>Процесс входа в ROUND</Header>
+      <Header level={2} className={classes.header}>
+        Процесс входа в ROUND
+      </Header>
       <div className={classes.processBlock}>
         <div className={classes.processLine}>
           <div className={classes.processNumber}>01/</div>
-          <div className={classes.processText}>Вы привязываете в боте свой крипто-кошелек</div>
+          <div className={classes.processText}>
+            Вы привязываете в боте свой крипто-кошелек
+          </div>
         </div>
         <div className={classes.processLine}>
           <div className={classes.processNumber}>02/</div>
-          <div className={classes.processText}>Совершаете перевод в удобном вам формате</div>
+          <div className={classes.processText}>
+            Совершаете перевод в удобном вам формате
+          </div>
         </div>
         <div className={classes.processLine}>
           <div className={classes.processNumber}>03/</div>
-          <div className={classes.processText}>Мы фиксируем за вами сумму токенов на вашу сумму инвестиций в момент сделки</div>
+          <div className={classes.processText}>
+            Мы фиксируем за вами сумму токенов на вашу сумму инвестиций в момент
+            сделки
+          </div>
         </div>
         <div className={classes.processLine}>
           <div className={classes.processNumber}>04/</div>
-          <div className={classes.processText}>Токен упадёт вам в кошелек ровно через 6 месяцев</div>
+          <div className={classes.processText}>
+            Токен упадёт вам в кошелек ровно через 6 месяцев
+          </div>
         </div>
       </div>
     </div>
     <div className={classes.faqBlockWrapper}>
-      <Header level={2} className={classes.header}>FAQ</Header>
+      <Header level={2} className={classes.header}>
+        FAQ
+      </Header>
       <div className={classes.faqBlock}>
         <div className={classes.faqItem}>
-          <Header level={3} className={classes.faqTitle}>Как сделать свой криптокошелек?</Header>
-          <div className={classes.faqText}>Мы предоставим видеоинструкцию по тому, как его сделать</div>
+          <Header level={3} className={classes.faqTitle}>
+            Как сделать свой криптокошелек?
+          </Header>
+          <div className={classes.faqText}>
+            Мы предоставим видеоинструкцию по тому, как его сделать
+          </div>
         </div>
         <div className={classes.faqItem}>
-          <Header level={3} className={classes.faqTitle}>Вы меня не забудете?</Header>
-          <div className={classes.faqText}>Ваш уникальный идентификатор это ваш кошелек, мы проверим его перед тем как его привязать и планировать на него вашу инвестицию</div>
+          <Header level={3} className={classes.faqTitle}>
+            Вы меня не забудете?
+          </Header>
+          <div className={classes.faqText}>
+            Ваш уникальный идентификатор это ваш кошелек, мы проверим его перед
+            тем как его привязать и планировать на него вашу инвестицию
+          </div>
         </div>
       </div>
     </div>

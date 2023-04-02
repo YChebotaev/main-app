@@ -21,7 +21,9 @@ export const BuyToken: FC = () => (
       <img className={classes.graph} src={graphExample} alt="" />
     </div>
     <div className={classes.buttonWrapper}>
-      <Button className={classes.button}>Купить токен</Button>
+      <Button to="/investments/buy" className={classes.button}>
+        Купить токен
+      </Button>
     </div>
   </div>
 );

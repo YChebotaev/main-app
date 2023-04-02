@@ -5,35 +5,9 @@ import { Control as ControlComponent } from "../Control";
 import { Label } from "../Label";
 import { Input } from "../Input";
 import { Selector } from "../Selector";
+import { CURRENCIES } from '../../constants'
 
 import classes from "./Amount.module.css";
-
-const CURRENCIES = [
-  {
-    value: "KZT",
-    name: "Казахский тенге",
-  },
-  {
-    value: "TRY",
-    name: "Турецкая лира",
-  },
-  {
-    value: "EUR",
-    name: "Евро",
-  },
-  {
-    value: "USD",
-    name: "Доллар США",
-  },
-  {
-    value: "AED",
-    name: "Дихрам ОАЭ",
-  },
-  {
-    value: "RUB",
-    name: "Российский рубль",
-  },
-];
 
 export const Amount: FC<{ control: Control }> = ({ control }) => {
   const [referenceElement, setReferenceElement] =
@@ -44,12 +18,12 @@ export const Amount: FC<{ control: Control }> = ({ control }) => {
       <Label>Хочу отправить</Label>
       <div className={classes.columns}>
         <div className={classes.left}>
-          <Input name="amount" control={control} />
+          <Input name="amountOfMoney" type="number" control={control} />
         </div>
         <div className={classes.right}>
           <Selector
             highlighted
-            name="currency"
+            name="coinType"
             control={control}
             items={CURRENCIES}
             referenceElement={referenceElement}

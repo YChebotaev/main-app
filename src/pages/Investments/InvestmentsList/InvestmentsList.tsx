@@ -10,6 +10,7 @@ export const InvestmentsList: FC = () => {
   return (
     <div className={classes.investmentsList}>
       <Tabs
+        initialTab="buy-token"
         items={[
           {
             key: "enter-round",

@@ -5,7 +5,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import { Main } from "../../pages/Main";
 import { Investments } from "../../pages/Investments";
-import { Round } from "../../pages/Round";
+import { Buy } from "../../pages/Buy";
 
 import classes from "./App.module.css";
 
@@ -42,7 +42,7 @@ export const App: FC = () => {
         <Routes key={location.key} location={location}>
           <Route path="/" element={<Main />} />
           <Route path="/investments" element={<Investments />} />
-          <Route path="/investments/round" element={<Round />} />
+          <Route path="/investments/buy" element={<Buy />} />
         </Routes>
       </CSSTransition>
     </TransitionGroup>

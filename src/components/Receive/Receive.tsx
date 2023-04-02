@@ -7,16 +7,23 @@ import { Label } from "../Label";
 
 import classes from "./Receive.module.css";
 
-export const Receive: FC<{ control: Control }> = ({ control }) => (
+export const Receive: FC<{ isLoading?: boolean; control: Control }> = ({
+  isLoading = false,
+  control,
+}) => (
   <ControlComponent className={classes.receive}>
     <Label>Получу</Label>
     <div className={classes.columns}>
       <div className={classes.left}>
-        <Input name="receive" control={control} />
+        <Input
+          readonly
+          isLoading={isLoading}
+          type="number"
+          name="getMoney"
+          control={control}
+        />
       </div>
-      <div className={classes.right}>
-        MAIN
-      </div>
+      <div className={classes.right}>MAIN</div>
     </div>
   </ControlComponent>
 );
