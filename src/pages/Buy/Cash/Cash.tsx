@@ -70,18 +70,18 @@ export const Cash: FC = () => {
       getMoney: number;
       phoneNumber: string;
     }) => {
-      const data = await apiClient.crypto.purchase({
+      const purchaseData = await apiClient.crypto.purchase({
         userId,
         amountOfMoney,
-        mainCourse: 0,
+        mainCourse: data?.client_main as number,
         bank: bank.value,
         coinType: coinType.value,
         getMoney,
         phoneNumber,
-        purchaseType: "Перевод",
+        purchaseType: "Наличные",
       });
 
-      return data;
+      return purchaseData;
     },
   );
 
