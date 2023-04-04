@@ -1,28 +1,38 @@
 import { type FC } from "react";
 
 import { Webinar } from "./Webinar";
-import { Samopiar } from "./Samopiar";
+// import { Samopiar } from "./Samopiar";
 import { MediaList } from "./MediaList";
 import { RatingsList } from "./RatingsList";
+import { Hero } from "./Hero";
 import { Page } from "../../components/Page";
 import { Header } from "../../components/Header";
 
 import classes from "./Main.module.css";
-import { Button } from "../../components/Button";
+// import { Button } from "../../components/Button";
 
 export const Main: FC = () => (
   <Page className={classes.main}>
-    <div className={classes.webinarWrapper}>
+    {/* <div className={classes.webinarWrapper}>
       <Webinar />
-    </div>
-    <div className={classes.samopiarWrapper}>
+    </div> */}
+    {/* <div className={classes.samopiarWrapper}>
       <Samopiar />
-    </div>
-    <div className={classes.buttonWrapper}>
+    </div> */}
+    {/* <div className={classes.buttonWrapper}>
       <Button to="/investments" style={{ fontSize: 18 }}>Инвестировать в MAIN</Button>
+    </div> */}
+    <div className={classes.heroWrapper}>
+      <Hero />
+    </div>
+    <div className={classes.webinarContainerWrapper}>
+      <Header>Мероприятия MAIN</Header>
+      <div className={classes.webinarWrapper}>
+        <Webinar />
+      </div>
     </div>
     <div className={classes.mediaWrapper}>
-      <Header>О нас пишут</Header>
+      <Header>О MAIN пишут</Header>
       <div className={classes.mediaListWrapper}>
         <MediaList />
       </div>

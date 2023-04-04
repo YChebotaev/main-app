@@ -1,0 +1,21 @@
+.walletIdWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.walletIdIcon {
+  width: 17px;
+  height: 17px;
+  background-image: url("../../assets/images/profile-wallet-id-icon.png");
+  border-radius: 100%;
+  background-size: cover;
+}
+
+.walletId {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.8);
+}

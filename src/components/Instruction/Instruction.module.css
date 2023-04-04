@@ -1,0 +1,58 @@
+.instruction {
+}
+
+.walletInstructionButton {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  padding: 0;
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #ad81f7;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footerLeft {
+  flex-grow: 1;
+}
+
+.footerRight {
+  flex-grow: 1;
+}
+
+.noButton {
+  border: 1px solid #ad81f7;
+  background: transparent;
+  font-size: 14px;
+}
+
+.yesButton {
+  font-size: 14px;
+}

@@ -54,3 +54,8 @@
 .appendumWrapper {
   padding: 0 15px;
 }
+
+.instructionWrapper {
+  padding: 10px 10px 0px;
+  border-top: 1px solid #1d1723;
+}

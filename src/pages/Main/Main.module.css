@@ -2,9 +2,18 @@
   padding-bottom: 10px;
 }
 
-.webinarWrapper {
+.heroWrapper {
   margin-top: 5px;
   padding: 0 20px;
+}
+
+.webinarContainerWrapper {
+  margin-top: 25px;
+  padding: 0 20px;
+}
+
+.webinarWrapper {
+  margin-top: 20px;
 }
 
 .samopiarWrapper {
