@@ -1,0 +1,24 @@
+.b-feedback-success-popup {
+    padding: 30px 40px 40px;
+}
+
+.b-feedback-success-popup__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-feedback-success-popup__done-icon {
+    margin-bottom: 17px;
+}
+
+.b-feedback-success-popup__title {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.38;
+    text-align: center;
+    color: #333333;
+    max-width: 266px;
+}

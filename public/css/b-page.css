@@ -1,0 +1,9 @@
+.b-page__security-block {
+    margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+    .b-page__menu {
+        margin-bottom: 40px;
+    }
+}

@@ -5,22 +5,41 @@ import InputMask from "react-input-mask";
 import { Flag } from "./Flag";
 import { Selector } from "../Selector";
 import { Control as ControlComponent } from "../Control";
+import ru from "./ru.json";
+import rawCountries from "./rawCountries";
 
 import classes from "./Phone.module.css";
 import { Label } from "../Label";
 
-const COUNTRIES = [
-  {
-    name: "Россия",
-    value: "RU",
-    code: "+7",
-  },
-  {
-    name: "США",
-    value: "US",
-    code: "+1",
-  },
-];
+// const COUNTRIES = [
+//   {
+//     name: "Россия",
+//     value: "RU",
+//     code: "+7",
+//   },
+//   {
+//     name: "США",
+//     value: "US",
+//     code: "+1",
+//   },
+// ];
+
+const COUNTRIES = rawCountries.map(
+  ([countryName, regions, iso2Code, dialCode]: [
+    string,
+    string[],
+    string,
+    string,
+  ]) => ({
+    name: Reflect.get(ru, iso2Code as string) as string,
+    value: (iso2Code as string).toUpperCase(),
+    code: `+${dialCode}`,
+  }),
+) as {
+  name: string;
+  value: string;
+  code: string;
+}[];
 
 export const Phone: FC<{ control: Control }> = ({ control }) => {
   const { field } = useController({ control, name: "phoneNumber" });

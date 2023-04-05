@@ -1,0 +1,12 @@
+.u-success {
+    color: green;
+    font-size: 14px;
+}
+
+.u-success_center {
+    text-align: center;
+}
+
+.u-success_mb_10 {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+.u-container {
+    max-width: 1220px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+}
+
+@media (max-width: 767px) {
+    .u-container {
+        padding: 0 15px;
+    }
+}

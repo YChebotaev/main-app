@@ -1,0 +1,349 @@
+.b-problems {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.b-problems__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    position: relative;
+}
+
+.b-problems__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 50%;
+    z-index: 1;
+}
+
+.b-problems__col_right {
+    width: 45%;
+    z-index: 0;
+}
+
+.b-problems__title_short {
+    padding-right: 50px;
+}
+
+.b-problems__list {
+    margin-top: 40px;
+    margin-bottom: 105px;
+    max-width: 400px;
+}
+
+.b-problems__list-item:not(:first-child) {
+    margin-top: 24px
+}
+
+.b-problems__list-item-inner {
+    display: flex;
+    align-items: center;
+}
+
+.b-problems__list-marker {
+    margin-right: 20px;
+}
+
+.b-problems__list-item-text {
+    font-size: 18px;
+    line-height: 1.44;
+    color: #333333;
+    opacity: 0.9;
+}
+
+.b-problems__images-container {
+    width: 700px;
+    display: flex;
+    height: 500px;
+    position: absolute;
+    left: 403px;
+    bottom: -100px;
+}
+
+.b-problems__img-phone {
+    width: 100%;
+    z-index: 1;
+}
+
+.b-problems__img-money {
+    position: absolute;
+    left: -80px;
+    bottom: 35px;
+    width: 150%;
+    z-index: 0;
+}
+
+.b-problems__plate {
+    background: #FFFFFF;
+    box-shadow: 0 0 20px rgb(0 0 0 / 7%);
+    border-radius: 10px;
+    padding: 18px 17px;
+    min-width: 212px;
+    width: 212px;
+    margin-top: 3px;
+    margin-left: 16px;
+}
+
+.b-problems__plate-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333333;
+}
+
+.b-problems__plate-text-bold {
+    font-weight: 600;
+}
+
+.b-problems__phone-hands-container {
+    position: absolute;
+    left: 36%;
+}
+
+.b-problems__phone-plate-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.b-problems__phone-container {
+    position: relative;
+    flex: 192px 1 0;
+    z-index: 1;
+}
+
+.b-problems__phone-img {
+    width: 100%;
+}
+
+.b-problems__chat-video {
+    position: absolute;
+    bottom: 11.5%;
+    width: 89%;
+    left: 5.48%;
+    border: 1px solid #fff;
+}
+
+.b-problems__left-hand-img {
+    position: absolute;
+    left: -55.5%;
+    bottom: -21.5%;
+}
+
+.b-problems__right-hand-img {
+    position: absolute;
+    right: -5.5%;
+    bottom: -21.5%;
+    z-index: 2;
+}
+
+.b-problems__coins {
+    top: 29%;
+    left: 14%;
+    position: absolute;
+    width: 96%;
+}
+
+.b-problems__coins_lg {
+    top: 19%;
+    left: 22%;
+    width: 69%;
+    display: none;
+}
+
+.b-problems__coins_md {
+    display: none;
+    top: 29%;
+    left: 10%;
+    width: 90%;
+}
+
+.b-problems__crown-img {
+    position: absolute;
+    left: 18%;
+    top: 5.5%;
+}
+
+.b-problems_theme_2 .b-problems__list {
+    margin-bottom: 65px;
+    max-width: 462px;
+}
+
+@media (max-width: 1399px) {
+    .b-problems__images-container {
+        left: unset;
+        right: 1vw;
+    }
+
+    .b-problems__phone-plate-container {
+        position: relative;
+        bottom: 36px;
+    }
+
+    .b-problems__left-hand-img {
+        left: -46.5%;
+        bottom: -13.5%;
+        width: 65%;
+    }
+
+    .b-problems__right-hand-img {
+        right: 0;
+        bottom: -19%;
+        width: 61%;
+    }
+
+    .b-problems__coins {
+        display: none;
+    }
+
+    .b-problems__coins_lg {
+        display: block;
+    }
+
+    .b-problems__crown-img {
+        width: 20%;
+        left: 13%;
+        top: -9.5%;
+    }
+}
+
+@media (max-width: 1023px) {
+    .b-problems__inner {
+        flex-direction: column;
+    }
+
+    .b-problems__title_short {
+        padding: 0;
+    }
+
+    .b-problems__col {
+        width: 100%;
+        align-items: center;
+    }
+
+    .b-problems__images-container {
+        position: relative;
+        bottom: -20px;
+        height: 420px;
+        right: unset;
+    }
+
+    .b-problems__coins_lg {
+        display: none;
+    }
+
+    .b-problems__coins_md {
+        display: block;
+    }
+
+    .b-problems__crown-img {
+        width: 31%;
+        left: 0.5%;
+        top: -15.5%;
+    }
+}
+
+@media (max-width: 767px) {
+    .b-problems__inner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .b-problems__col_right {
+        margin-bottom: 36px;
+    }
+
+    .b-problems__col {
+        width: 100%;
+        align-items: center;
+    }
+
+    .b-problems__list,
+    .b-problems_theme_2 .b-problems__list {
+        margin-bottom: 20px;
+    }
+
+    .b-problems__images-container {
+        flex-direction: column;
+    }
+
+    .b-problems__plate {
+        position: static;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .b-problems__img-money {
+        left: 0;
+        bottom: 22%;
+        width: 100%;
+    }
+
+    .b-problems__images-container {
+        position: static;
+        width: unset;
+        height: unset;
+    }
+
+    .b-problems__plate {
+        padding: 18px 15px;
+        max-width: 290px;
+        width: 100%;
+    }
+
+    .b-problems__phone-hands-container {
+        position: static;
+    }
+
+    .b-problems__phone-plate-container {
+        position: static;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .b-problems__phone-container {
+        width: 100%;
+    }
+
+    .b-problems__left-hand-img {
+        display: none;
+    }
+
+    .b-problems__right-hand-img {
+        display: none;
+    }
+
+    .b-problems__coins {
+        display: none;
+    }
+
+    .b-problems__crown-img {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .b-problems__list {
+        margin-top: 20px;
+    }
+    .b-problems__list-marker {
+        width: 32px;
+        margin-right: 16px;
+        margin-top: 5px;
+    }
+
+    .b-problems__list {
+        margin-bottom: 20px;
+    }
+    .b-problems__list-item-inner {
+        align-items: flex-start;
+    }
+    .b-problems__list-item-text {
+        font-size: 16px;
+        line-height: 1.38;
+    }
+}
+

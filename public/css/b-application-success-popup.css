@@ -1,0 +1,33 @@
+.b-application-success-popup {
+    padding: 50px 26px;
+}
+.b-application-success-popup__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.b-application-success-popup__title {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.38;
+    text-align: center;
+    color: #333333;
+}
+
+.b-application-success-popup__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 29px;
+}
+
+.b-application-success-popup__social-button {
+    height: 50px;
+    max-width: 200px;
+}
+
+.b-application-success-popup__social-button:first-child {
+    margin-bottom: 14px;
+}

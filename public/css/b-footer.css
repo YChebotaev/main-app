@@ -1,0 +1,274 @@
+.b-footer {
+    padding: 72px 0 0;
+    background: #282437;
+}
+
+.b-footer__inner {
+    display: grid;
+    column-gap: 90px;
+    grid-template-areas:
+        "logo    transfers transfers-part phone"
+        "logo    transfers transfers-part phone"
+        "logo    transfers info           phone"
+        "privacy transfers info           phone"
+        "privacy transfers info           phone"
+        ". . .           phone";
+    grid-auto-columns: 253px 159px 159px 361px;
+    grid-auto-rows: auto auto auto auto auto minmax(40px, 1fr);
+}
+
+.b-footer__logo-side {
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+}
+
+.b-footer__privacy-container {
+    grid-area: privacy;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 27px;
+}
+
+.b-footer__transfers-container {
+    grid-area: transfers;
+    display: flex;
+}
+
+.b-footer__transfers-part-container {
+    grid-area: transfers-part;
+    display: flex;
+}
+
+.b-footer__info-container {
+    grid-area: info;
+    margin-top: 3px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.b-footer__phone-img-container {
+    grid-area: phone;
+    display: flex;
+    align-items: flex-end;
+}
+
+.b-footer__logo {
+    width: 100%;
+    max-width: 144px;
+}
+
+.b-footer__logo-link {
+    width: fit-content;
+    display: block;
+}
+
+.b-footer__address-container {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.73;
+    color: #FFFFFF;
+    margin-top: 24px;
+    max-width: 216px;
+}
+
+.b-footer__socials {
+    margin-top: 32px;
+    display: flex;
+}
+
+.b-footer__social-icon {
+    width: 40px;
+}
+
+.b-footer__social-icon:first-child {
+    margin-right: 24px;
+}
+
+
+.b-footer__link {
+    font-size: 15px;
+    line-height: 2.7;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.b-footer__link:hover {
+    text-decoration: underline;
+}
+
+
+.b-footer__collapsible.open .b-footer__collapsible-icon {
+    transform: rotate(180deg);
+}
+
+.b-footer__collapsible-label-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.b-footer__collapsible-label {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 2.7;
+    color: #FFFFFF;
+}
+
+.b-footer__collapsible-list {
+    transition: max-height 0.4s ease-out;
+}
+
+.b-footer__collapsible-list-item_hidden {
+    display: none;
+}
+
+
+.b-footer__phone-img {
+    width: 361px;
+    height: 439px;
+}
+
+@media (max-width: 1210px) {
+    .b-footer {
+        padding: 72px 30px;
+    }
+
+    .b-footer__inner {
+        display: grid;
+        column-gap: 50px;
+        grid-template-areas:
+        "logo    transfers transfers-part"
+        "logo    transfers transfers-part"
+        "logo    transfers info          "
+        "privacy transfers info          "
+        "privacy transfers info          "
+        "privacy transfers info          ";
+        grid-auto-columns: 253px 159px 159px;
+        justify-content: space-around;
+    }
+
+    .b-footer__privacy-container {
+        justify-content: flex-end;
+    }
+
+    .b-footer__transfers-part-container {
+    }
+
+    .b-footer__info-container {
+        align-items: flex-end;
+    }
+
+    .b-footer__phone-img-container {
+        display: none;
+    }
+
+    .b-footer__collapsible {
+        height: fit-content;
+    }
+}
+
+@media (max-width: 767px) {
+    .b-footer {
+        padding: 48px 0;
+    }
+
+    .b-footer__inner {
+        display: grid;
+        column-gap: 30px;
+        grid-template-areas:
+            "logo    transfers"
+            "logo    transfers"
+            "logo    transfers"
+            ".       transfers"
+            ".       info"
+            "privacy info";
+        grid-auto-columns: 253px 159px;
+        justify-content: space-around;
+    }
+
+    .b-footer__transfers-part-container {
+        display: none;
+    }
+
+    .b-footer__info-container {
+        margin-top: 20px;
+    }
+
+    .b-footer__collapsible-list-item.u-hidden {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .b-footer__inner {
+        display: grid;
+        column-gap: 30px;
+        grid-template-areas:
+            "logo"
+            "transfers"
+            "info"
+            "privacy";
+        grid-auto-columns: 1fr;
+        justify-content: center;
+    }
+
+    .b-footer__transfers-container {
+        margin-top: 32px;
+    }
+
+    .b-footer__info-container {
+        margin-top: 32px;
+    }
+
+    .b-footer__privacy-container {
+        margin-top: 32px;
+    }
+
+    .b-footer__logo {
+        max-width: 108px;
+    }
+
+    .b-footer__address-container {
+        font-size: 14px;
+        line-height: 1.86;
+        margin-top: 20px;
+        max-width: unset;
+    }
+
+    .b-footer__social-icon {
+        width: 32px;
+    }
+
+    .b-footer__social-icon:first-child {
+        margin-right: 20px;
+    }
+
+    .b-footer__link {
+        font-size: 14px;
+        line-height: 2.5;
+    }
+
+    .b-footer__collapsible-label-container {
+        cursor: pointer;
+    }
+
+    .b-footer__collapsible-list {
+        max-height: 0;
+        overflow-y: hidden;
+    }
+
+    .b-footer__collapsible-label {
+        font-size: 14px;
+        line-height: 2.5;
+    }
+
+    .b-footer__collapsible {
+        width: 100%;
+    }
+
+    .b-footer__collapsible-icon.u-hidden {
+        display: block;
+    }
+}

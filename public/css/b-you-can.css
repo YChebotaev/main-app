@@ -1,0 +1,87 @@
+.b-you-can {
+    background: #FFFFFF;
+    padding: 80px 0;
+}
+
+.b-you-can__title {
+}
+
+.b-you-can__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 30px -20px 0;
+}
+
+.b-you-can__list-item {
+
+}
+
+.b-you-can__plate {
+    position: relative;
+    width: fit-content;
+    padding-top: 37px;
+}
+
+.b-you-can__icon-container {
+    position: absolute;
+    top: 0;
+    right: calc(50% - 51px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 102px;
+    height: 102px;
+    background: #F6F7F9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+    border-radius: 50%;
+}
+
+.b-you-can__icon {
+
+}
+
+.b-you-can__icon_money {
+    max-width: 79px;
+}
+
+.b-you-can__icon_purchases {
+    max-width: 65px;
+}
+
+.b-you-can__icon_phone {
+    max-width: 74px;
+}
+
+.b-you-can__icon_cards {
+    max-width: 61px;
+}
+
+
+.b-you-can__plate-icon {
+
+}
+
+.b-you-can__text {
+    font-family: 'Gilroy';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.25;
+    text-align: center;
+    color: #333333;
+    opacity: 0.8;
+    position: absolute;
+    left: calc(50% - 125px);
+    top: 140px;
+    width: 250px;
+}
+
+@media (max-width: 767px) {
+    .b-you-can {
+        padding: 48px 0;
+    }
+
+    .b-you-can__list {
+        margin: 10px -20px 0;
+    }
+}

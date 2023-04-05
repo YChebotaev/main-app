@@ -1,0 +1,13 @@
+.b-privacy {
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 400;
+    white-space: pre-line;
+    background: #fff;
+    padding: 20px 0 60px;
+}
+
+.b-privacy__subtitle {
+    font-weight: 700;
+    display: block;
+}

@@ -1,0 +1,72 @@
+.u-input {
+    width: 100%;
+}
+
+.u-input__label {
+    display: inline-block;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    width: 100%;
+}
+
+.u-input__input-area {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #C9C9C9;
+    width: 100%;
+}
+
+.u-input__input-container {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.u-input__text-prefix {
+    color: #131313;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.u-input__input {
+    font-size: 14px;
+    line-height: 1.8;
+    border: none;
+    width: 100%;
+    color: #131313;
+    opacity: 0.8;
+    background: transparent;
+    padding: 8px 0;
+}
+
+.u-input__phone-label-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-left: -2px;
+    margin-right: 4px;
+}
+
+.u-input__phone-code {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.u-input__input-error {
+    margin-top: 8px;
+    display: none;
+}
+
+.u-input.u-input_with-select .u-input__input-container {
+    position: relative;
+}
+
+.u-input.u-input_with-select .u-input__input {
+    position: absolute;
+    width: calc(100% - 65px);
+}

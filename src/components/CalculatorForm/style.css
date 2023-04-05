@@ -1,0 +1,24 @@
+.u-input__label,
+.b-intro-block__rate-label-text,
+.b-intro-block__time-text,
+.b-intro-block__agreement {
+  color: #ffffff;
+}
+
+.b-intro-block__rate-label,
+.b-intro-block__time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.b-intro-block__agreement {
+  margin-top: 5px;
+}
+
+#from_fiat_sum,
+#to_fiat_sum,
+#from_trade_method .select2-selection__rendered {
+  padding-left: 5px;
+}

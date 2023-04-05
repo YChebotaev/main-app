@@ -1,0 +1,39 @@
+.b-application-creating-popup__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: auto;
+}
+
+.b-application-creating-popup__inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.b-application-creating-popup__input:not(:first-child) {
+    margin-top: 20px;
+}
+
+.b-application-creating-popup__submit-button {
+    width: 200px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.b-application-creating-popup__agreement {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+    color: #888888;
+    max-width: 185px;
+    margin-top: 10px;
+}
+
+.b-application-creating-popup .iti__country-list {
+    max-width: 280px;
+}

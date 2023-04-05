@@ -1,0 +1,12 @@
+.u-link {
+    color: rgb(152, 165, 242);
+    border-bottom: 1px solid rgb(152, 165, 242);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.u-link_usual {
+    color: inherit;
+    border-bottom: none;
+    text-decoration: underline;
+}

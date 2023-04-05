@@ -1,0 +1,155 @@
+.b-feedback {
+    padding: 80px 0;
+    position: relative;
+}
+
+.b-feedback__plate {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.b-feedback__socials {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 424px;
+}
+
+.b-feedback__button-whatsapp {
+    width: 200px;
+}
+
+.b-feedback__button-tm {
+    width: 200px;
+}
+
+.b-feedback__social-button {
+    width: 200px;
+}
+
+.b-feedback__social-icon {
+    margin-left: 17px;
+}
+
+.b-feedback__form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.b-feedback__form {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-feedback__inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.b-feedback__input-container {
+    width: 100%;
+}
+
+.b-feedback__input-container:not(:first-child) {
+    margin-top: 24px;
+}
+
+.b-feedback__input-inner {
+    padding: 6px 19px;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+}
+
+.b-feedback__input {
+    font-size: 18px;
+    line-height: 1.8;
+    border: none;
+    width: 100%;
+    color: #131313;
+    opacity: 0.8;
+    padding: 8px 0;
+}
+
+.b-feedback__input-error {
+    margin-top: 10px;
+    margin-left: 5px;
+    display: none;
+}
+
+.b-feedback__phone-code {
+    font-size: 18px;
+}
+
+
+.b-feedback__submit-button {
+    width: 200px;
+}
+
+.b-feedback__agreement-text {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+    color: #333333;
+    max-width: 300px;
+    margin-top: 13px;
+}
+
+.b-feedback__agreement-link {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 767px) {
+    .b-feedback {
+        padding: 48px 0 60px;
+    }
+
+    .b-feedback__plate {
+        padding: 24px 16px 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .b-feedback__socials {
+        margin-top: 24px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .b-feedback__social-button:first-child {
+        margin-bottom: 14px;
+    }
+
+    .b-feedback__form-container {
+        margin-top: 48px;
+    }
+
+    .b-feedback__input-container:not(:first-child) {
+        margin-top: 16px;
+    }
+
+    .b-feedback__inputs {
+        margin-bottom: 16px;
+    }
+}

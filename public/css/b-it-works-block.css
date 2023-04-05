@@ -1,0 +1,291 @@
+.b-it-works {
+    padding: 80px 0 77px;
+    position: relative;
+}
+
+.b-it-works__inner {
+    display: flex;
+}
+
+.b-it-works__col {
+    width: 50%;
+}
+
+.b-it-works__col_left {
+
+}
+
+.b-it-works__col_right {
+    position: relative;
+    z-index: -1;
+}
+
+.b-it-works__title {
+
+}
+
+.b-it-works__content {
+
+}
+
+.b-it-works__paragraph {
+    font-size: 18px;
+    line-height: 1.61;
+    color: #333333;
+    opacity: 0.9;
+    margin-top: 40px;
+    max-width: 463px;
+}
+
+.b-it-works__paragraph_sm {
+    font-size: 11px;
+    opacity: 0.9;
+    margin-top: 30px;
+    max-width: 420px;
+}
+
+.b-it-works__paragraph_mobile {
+    display: none;
+}
+
+.b-it-works__wallet-container {
+    width: 703px;
+    height: 703px;
+    position: absolute;
+    bottom: -246px;
+    right: -270px;
+}
+
+.b-it-works__list {
+    position: relative;
+    z-index: 1;
+    right: 110px;
+    top: 0;
+}
+
+.b-it-works__list-item {
+
+}
+
+.b-it-works__list-item:not(:first-child) {
+    margin-top: 40px;
+}
+
+.b-it-works__list-item:nth-child(2) {
+    position: relative;
+    right: 95px;
+}
+
+.b-it-works__list-item:nth-child(3) {
+    position: relative;
+    right: 130px;
+}
+
+.b-it-works__list-item:nth-child(4) {
+    position: relative;
+    right: 125px;
+}
+
+.b-it-works__badge {
+    background: #FAFAFA;
+    box-shadow: 0 0 30px rgba(0, 21, 57, 0.03);
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    max-width: 300px;
+}
+
+.b-it-works__badge-icon-container {
+    min-width: 58px;
+    min-height: 58px;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 10px rgba(0, 21, 57, 0.03);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.b-it-works__badge-icon {
+
+}
+
+.b-it-works__badge-text {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #333333;
+    opacity: 0.8;
+}
+
+.b-it-works__wallet-imgs-container {
+    /*width: 703px;*/
+    /*height: 703px;*/
+    /*position: absolute;*/
+    /*bottom: -336px;*/
+    /*right: -270px;*/
+}
+
+.b-it-works__wallet-stroke {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #EEF0F7;
+    border-radius: 50%;
+}
+
+.b-it-works__wallet-circle {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    background: #EEF0F7;
+    border-radius: 50%;
+    width: 77%;
+    height: 77%;
+}
+
+.b-it-works__wallet-img {
+    position: absolute;
+    top: 105px;
+    right: 150px;
+}
+
+@media (max-width: 1200px) {
+    .b-it-works__col_left {
+        width: 41%;
+    }
+
+    .b-it-works__col_right {
+        width: 59%;
+    }
+    
+    .b-it-works__list {
+        right: 0;
+    }
+}
+
+@media (max-width: 1023px) {
+    .b-it-works {
+        padding: 60px 0 0;
+    }
+
+    .b-it-works__inner {
+        flex-direction: column;
+    }
+
+    .b-it-works__paragraph {
+        max-width: unset;
+    }
+
+    .b-it-works__wallet-container {
+        position: relative;
+        bottom: -59px;
+        right: -150px;
+        margin-bottom: -140px;
+    }
+
+    .b-it-works__col_left {
+        width: 100%;
+    }
+
+    .b-it-works__col_right {
+        width: 100%;
+    }
+
+    .b-it-works__list {
+        right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .b-it-works {
+        padding: 48px 0 350px;
+    }
+
+    .b-it-works__inner {
+
+    }
+
+    .b-it-works__title {
+    }
+
+    .b-it-works__paragraph {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .b-it-works__paragraph_sm {
+        font-size: 10px;
+    }
+
+    .b-it-works__paragraph_mobile {
+        display: block;
+    }
+
+    .b-it-works__paragraph_desktop {
+        display: none;
+    }
+
+    .b-it-works__list {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 16px;
+    }
+
+    .b-it-works__list-item:nth-child(1n) {
+        position: static;
+        margin: 8px;
+        width: 290px;
+    }
+
+    .b-it-works__wallet-container {
+        position: static;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .b-it-works__badge-text {
+        font-size: 16px;
+    }
+
+    .b-it-works__wallet-imgs-container {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        left: calc(50% - 250px);
+        margin: 94px auto -220px;
+    }
+
+    .b-it-works__wallet-stroke {
+        display: none;
+    }
+
+    .b-it-works__wallet-circle {
+        position: static;
+        width: 100%;
+        height: 100%;
+    }
+
+    .b-it-works__wallet-img {
+        top: -80px;
+        right: calc(50% - 165px);
+        width: 300px;
+    }
+
+    .b-it-works__col_left {
+    }
+
+    .b-it-works__col_right {
+    }
+
+    .b-it-works__list {
+    }
+}

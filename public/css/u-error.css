@@ -1,0 +1,12 @@
+.u-error {
+    color: #FF0000;
+    font-size: 14px;
+}
+
+.u-error_center {
+    text-align: center;
+}
+
+.u-error_mb_10 {
+    margin-bottom: 10px;
+}

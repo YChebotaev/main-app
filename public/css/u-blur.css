@@ -1,0 +1,137 @@
+.u-blur {
+    background: #D57EEB;
+    filter: blur(200px);
+    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+    position: absolute;
+    bottom: -70px;
+    right: -150px;
+    z-index: -2;
+}
+
+.u-blur_mobile {
+    display: none;
+}
+
+.u-blur_intro-block-1 {
+    bottom: -70px;
+    right: -150px;
+}
+
+.u-blur_intro-block-2 {
+    background: #9795EA;
+    bottom: 270px;
+    right: -50px;
+}
+
+.u-blur_intro-block-3 {
+    background: #9795EA;
+    filter: blur(135px);
+    width: 88px;
+    height: 88px;
+    top: 200px;
+    right: -60px;
+}
+
+.u-blur_security-block-1 {
+    background: #9795EA;
+    opacity: 0.7;
+    bottom: 20px;
+    left: -150px;
+}
+
+.u-blur_it-works-1 {
+    background: #D57EEB;
+    bottom: -70px;
+    left: calc(50% - 180px);
+}
+
+.u-blur_it-works-2 {
+    background: #D57EEB;
+    filter: blur(175px);
+    width: 109px;
+    height: 109px;
+    bottom: 50%;
+    right: -30px;
+}
+
+.u-blur_actions-1 {
+    background: #D57EEB;
+    opacity: 0.7;
+    top: 220px;
+    right: -170px;
+}
+
+.u-blur_actions-2 {
+    background: #9795EA;
+    width: 88px;
+    height: 88px;
+    top: 64px;
+    right: -60px;
+}
+
+.u-blur_actions-3 {
+    filter: blur(175px);
+    width: 109px;
+    height: 109px;
+    bottom: 130px;
+    left: -70px;
+}
+
+.u-blur_reviews-1 {
+    background: #9795EA;
+    width: 211px;
+    height: 211px;
+    top: -50px;
+    left: -150px;
+}
+
+.u-blur_reviews-2 {
+    background: #9795EA;
+    top: -5px;
+    right: -130px;
+}
+
+.u-blur_reviews-3 {
+    width: 228px;
+    height: 228px;
+    bottom: -50px;
+    right: -130px;
+}
+
+.u-blur_reviews-4 {
+    background: #9795EA;
+    filter: blur(135px);
+    width: 88px;
+    height: 88px;
+    top: 200px;
+    right: -70px;
+}
+
+.u-blur_feedback-1 {
+    filter: blur(250px);
+    width: 164px;
+    height: 164px;
+    left: -150px;
+    bottom: 300px;
+}
+
+.u-blur_feedback-2 {
+    background: #9795EA;
+    filter: blur(250px);
+    width: 161px;
+    height: 161px;
+    right: -150px;
+    bottom: 200px;
+}
+
+@media (max-width: 767px) {
+    .u-blur {
+        display: none;
+    }
+
+    .u-blur_mobile {
+        display: block;
+    }
+}

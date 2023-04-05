@@ -1,0 +1,125 @@
+.b-faq {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.b-faq__list {
+    margin-top: 40px;
+    border-top: 1px solid rgba(87,103,201,0.5);
+}
+
+.b-faq__item {
+    border-bottom: 1px solid rgba(87,103,201,0.5);
+}
+
+.b-faq__question-line {
+    padding: 17px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.b-faq__question-line:hover .b-faq__button {
+    background: linear-gradient(92.57deg, #D1ADF4 -6.9%, #7B8AE4 100%, #98A5F2 100%);
+}
+
+.b-faq__question-line:hover .b-faq__button-icon_white {
+   visibility: visible;
+}
+
+.b-faq__question {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.89;
+    color: #131313;
+    opacity: 0.8;
+}
+
+.b-faq__button {
+    position: relative;
+    min-width: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: rgb(246,247,249);
+    transition: background-color 0.2s;
+}
+
+.b-faq__button-icon {
+    transition: transform 0.3s;
+    position: absolute;
+    top: calc(50% - 10.5px);
+    left: calc(50% - 11px);
+}
+
+.b-faq__button-icon_white {
+    visibility: hidden;
+}
+
+.b-faq__button.active {
+    background: linear-gradient(92.57deg, #D1ADF4 -6.9%, #7B8AE4 100%, #98A5F2 100%);
+}
+
+.b-faq__button.active .b-faq__button-icon {
+    transform: rotate(-45deg);
+}
+
+.b-faq__button.active .b-faq__button-icon_white {
+    visibility: visible;
+}
+
+.b-faq__answer-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    padding-right: 59px;
+}
+
+.b-faq__answer {
+    font-size: 18px;
+    line-height: 1.44;
+    color: #131313;
+    opacity: 0.8;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .b-faq {
+        padding: 48px 0;
+    }
+
+    .b-faq__list {
+        margin-top: 22px;
+    }
+
+    .b-faq__question {
+        font-size: 14px;
+        line-height: 1.43;
+    }
+
+    .b-faq__button {
+        min-width: 32px;
+        min-height: 32px;
+        max-height: 32px;
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .b-faq__answer-container {
+        padding-right: 0;
+    }
+
+    .b-faq__answer {
+        font-size: 14px;
+        line-height: 1.43;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+}

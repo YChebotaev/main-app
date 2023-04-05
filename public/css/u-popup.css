@@ -1,0 +1,41 @@
+.u-popup-root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.u-popup {
+    padding: 30px 40px;
+    background: #FFFFFF;
+    box-shadow: 0 0 30px rgba(0, 21, 57, 0.03);
+    border-radius: 15px;
+    max-height: 100vh;
+    max-width: 360px;
+    width: 100%;
+    position: relative;
+    margin: 0 10px;
+    display: none;
+}
+
+.u-popup__close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.u-input__input-error {
+    font-size: 12px;
+}

@@ -1,0 +1,90 @@
+.b-reviews {
+    padding: 80px 0;
+    position: relative;
+}
+
+.b-reviews__container {
+    max-width: 1280px;
+    padding: 0 60px;
+}
+
+.b-reviews__slider {
+    margin-top: 35px;
+    position: relative;
+}
+
+.b-reviews__slide-item {
+    display: flex !important;
+    justify-content: center;
+}
+
+.b-reviews__slide-img {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.b-reviews__arrow-container {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(92.57deg, #D1ADF4 -6.9%, #7B8AE4 100%, #98A5F2 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 16px);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.b-reviews__arrow-container_left {
+    left: -46px;
+}
+
+.b-reviews__arrow-container_right {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    right: -46px;
+}
+
+.b-reviews__arrow-img {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.b-reviews__pagination {
+    max-width: 300px;
+    margin: 20px auto 0;
+}
+
+.b-reviews__pagination .slick-dots {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.b-reviews__pagination button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #D9D9D9;
+    text-indent: -9999px;
+}
+
+.b-reviews__pagination .slick-active button {
+    background: #B6A2F0;
+}
+
+@media (max-width: 480px) {
+    .b-reviews__container {
+        padding: 0 30px;
+    }
+
+    .b-reviews__arrow-container_left {
+        left: -16px;
+    }
+
+    .b-reviews__arrow-container_right {
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        right: -16px;
+    }
+}
+

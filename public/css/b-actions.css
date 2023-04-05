@@ -1,0 +1,143 @@
+.b-actions {
+    padding: 80px 0 84px;
+    position: relative;
+}
+
+.b-actions_bg_white {
+    background: #fff;
+}
+
+.b-actions__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.b-actions__title {
+    max-width: 700px;
+}
+
+.b-actions__subtitle {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.35;
+    color: #333333;
+    opacity: 0.8;
+    text-align: center;
+    margin-top: 26px;
+}
+
+
+.b-actions__list-container {
+    position: relative;
+    margin-top: 30px;
+    max-width: 800px;
+}
+
+.b-actions__list {
+
+}
+
+.b-actions__list-item {
+
+}
+
+.b-actions__action {
+    display: flex;
+}
+
+.b-actions__done-icon-container {
+    position: relative;
+    margin-right: 22px;
+}
+
+.b-actions__done-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.b-actions__line-icon {
+    background-image: url("/assets/images/b-actions/line.svg");
+    background-size: 4px;
+    background-position: center;
+    height: 100%;
+    background-repeat: repeat-y;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 2px);
+    width: 4px;
+    z-index: 1;
+}
+
+.b-actions__action-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+
+.b-actions__step-label {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333333;
+}
+
+.b-actions__step-text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.56;
+    color: #333333;
+    opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+    .b-actions {
+        align-items: flex-start;
+        padding: 48px 0;
+    }
+
+    .b-actions__title {
+        text-align: left;
+    }
+
+    .b-actions__subtitle {
+        font-size: 20px;
+        line-height: 1.35;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .b-actions__list-container {
+        margin-top: 32px;
+    }
+
+    .b-actions__done-icon-container {
+        position: relative;
+        margin-right: 16px;
+    }
+
+    .b-actions__done-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .b-actions__line-icon{
+        background-size: 3px;
+        left: calc(50% - 1.5px);
+        width: 3px;
+    }
+
+    .b-actions__action-content {
+        padding-bottom: 24px;
+    }
+
+    .b-actions__step-text {
+        font-size: 16px;
+        line-height: 1.38;
+    }
+
+    .b-actions__button {
+        margin: 0 auto;
+    }
+}

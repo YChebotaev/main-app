@@ -1,0 +1,44 @@
+.b-card-popup {
+    padding: 30px;
+}
+
+.b-card-popup__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.b-card-popup__form-inputs {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.b-card-popup__input:not(:first-child) {
+    margin-top: 20px;
+}
+
+.b-card-popup__label {
+
+}
+
+.b-card-popup__form-button {
+    width: 200px;
+    height: 50px;
+    padding: 15px 20px;
+}
+
+.b-card-popup__agreement {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+    color: #888888;
+    max-width: 185px;
+    margin-top: 10px;
+}
