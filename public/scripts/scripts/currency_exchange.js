@@ -1,11 +1,11 @@
-import {sendRequest, getRequestParameter}  from '../scripts/components/request_tools.js';
+import { sendRequest, getRequestParameter } from '../scripts/components/request_tools.js';
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
-import {checkPhone, getStandardPhone, showFieldError} from "../scripts/components/form.js";
-import {getCookie, setCookie} from "../scripts/components/cookie.js";
+import { checkPhone, getStandardPhone, showFieldError } from "../scripts/components/form.js";
+import { getCookie, setCookie } from "../scripts/components/cookie.js";
 
 $(() => {
 
-    if(!window.numma) {
+    if (!window.numma) {
         return;
     }
 
@@ -53,8 +53,7 @@ const init = (interval, config) => {
         separateDialCode: true,
         nationalMode: true
     })
-
-    phone.on("countrychange", function() {
+    phone.on("countrychange", function () {
         Iti.mask(phone);
     });
 
@@ -65,7 +64,7 @@ const init = (interval, config) => {
     // const submitButton = secondForm.parent().parent().parent().find('.js-send a');
     let currencyExchange;
 
-    if(firstForm.length > 0) {
+    if (firstForm.length > 0) {
         clearInterval(interval);
     } else {
         return;
@@ -96,10 +95,10 @@ const init = (interval, config) => {
             $select.html(options);
 
             if (selected) {
-               $select.val(selected).trigger({
-                   type: 'change',
-                   trigger: TRIGGERS.JS
-               })
+                $select.val(selected).trigger({
+                    type: 'change',
+                    trigger: TRIGGERS.JS
+                })
             }
         }
 
@@ -189,7 +188,7 @@ const init = (interval, config) => {
                 //updateMethodsSelect(toTradeMethod, response.to_trade_methods, response.to_trade_method);
 
                 //if(fromTradeMethod.val() !== '' && toTradeMethod.val() !== '') {
-                if(fromTradeMethod.val() !== '') {
+                if (fromTradeMethod.val() !== '') {
                     getMainExchange();
                 }
 
@@ -268,7 +267,7 @@ const init = (interval, config) => {
         /**
          * Валидация сумм.
          */
-        if(!validateSums()) {
+        if (!validateSums()) {
             return;
         }
 
@@ -295,21 +294,21 @@ const init = (interval, config) => {
             method: 'GET',
             data,
             success_handle: (response) => {
-            	console.log('test123 response: ', response);
+                console.log('test123 response: ', response);
 
-                if(response.client_main) {
-                	//fromFiatSum.val(response.from_fiat_amount.toFixed(2))
-                	toFiatSum.val(response.client_main.toFixed(2))
-                	currencyExchange = +response.currency_exchange;
-                	currencyExchangeField.html(`Курс: 1 ${getFromFiatValue()} = `+response.currency_exchange.toFixed(2)+` MAIN`);
-                } else if(+response.min_amount === 0 && +response.max_amount === 0) {
-                        if (response.no_offer === getToFiatValue()) {
-                            showFieldError(toTradeMethod, 'Банк не подходит для банка получения. Выберите другой банк.');
-                        } else if (response.no_offer === getFromFiatValue()) {
-                            showFieldError(fromTradeMethod, 'Банк не подходит для банка отправления. Выберите другой банк.');
-                        }
+                if (response.client_main) {
+                    //fromFiatSum.val(response.from_fiat_amount.toFixed(2))
+                    toFiatSum.val(response.client_main.toFixed(2))
+                    currencyExchange = +response.currency_exchange;
+                    currencyExchangeField.html(`Курс: 1 ${getFromFiatValue()} = ` + response.currency_exchange.toFixed(2) + ` MAIN`);
+                } else if (+response.min_amount === 0 && +response.max_amount === 0) {
+                    if (response.no_offer === getToFiatValue()) {
+                        showFieldError(toTradeMethod, 'Банк не подходит для банка получения. Выберите другой банк.');
+                    } else if (response.no_offer === getFromFiatValue()) {
+                        showFieldError(fromTradeMethod, 'Банк не подходит для банка отправления. Выберите другой банк.');
+                    }
                 } else {
-                    if(+response.min_amount === 0 && +response.max_amount === 0) {
+                    if (+response.min_amount === 0 && +response.max_amount === 0) {
                         if (response.no_offer === getToFiatValue()) {
                             showFieldError(toTradeMethod, 'Банк не подходит для банка получения. Выберите другой банк.');
                         } else if (response.no_offer === getFromFiatValue()) {
@@ -337,7 +336,7 @@ const init = (interval, config) => {
                         }
                     }
                 }
-            	/*
+                /*
                 if(response.currency_exchange && (isFromFiatChange ? response.from_fiat_amount : response.to_fiat_amount)) {
                     console.log('test1: ', +response.currency_exchange, +response.currency_exchange_direction);
                     isFromFiatChange ? fromFiatSum.val(response.from_fiat_amount.toFixed(2)) : toFiatSum.val(response.to_fiat_amount.toFixed(2));
@@ -401,7 +400,7 @@ const init = (interval, config) => {
 
         [fromFiatSum].forEach((field) => {
             value = field.val();
-            if(!value || value === '' || isNaN(parseFloat(value))) {
+            if (!value || value === '' || isNaN(parseFloat(value))) {
                 showFieldError(field, 'Укажите число.');
                 isValid = false;
             }
@@ -421,7 +420,7 @@ const init = (interval, config) => {
         /**
          * Валидация.
          */
-        if(!validateForm(true)) {
+        if (!validateForm(true)) {
             return;
         }
 
@@ -444,6 +443,9 @@ const init = (interval, config) => {
             phoneNumber,
             purchaseType: 'Перевод'
         })
+            .then(() => {
+                __send_form_callback__()
+            })
 
         // sendRequest({
         //     url: Api.getUrl('create_part_order'),
@@ -485,7 +487,7 @@ const init = (interval, config) => {
         /**
          * Валидация.
          */
-        if(!validateForm()) {
+        if (!validateForm()) {
             return;
         }
 
@@ -510,9 +512,9 @@ const init = (interval, config) => {
                     const domain = window.location.hostname;
 
                     if (domain === 'nummasend.ru') {
-                        ym(91009616,'reachGoal','zayavka')
-                    } else if(domain === 'numma.org') {
-                        ym(91134462,'reachGoal','zayavka')
+                        ym(91009616, 'reachGoal', 'zayavka')
+                    } else if (domain === 'numma.org') {
+                        ym(91134462, 'reachGoal', 'zayavka')
                     } else if (domain === 'numfunds.ru') {
                         ym(91608613, 'reachGoal', 'zayavka')
                     }
@@ -540,36 +542,36 @@ const init = (interval, config) => {
             let value = getCookie(key);
 
             if (value !== 'false' && value) {
-                data.push({name: key, value: value});
+                data.push({ name: key, value: value });
             } else if (value = getRequestParameter(key)) {
-                setCookie(key, value, 60*60*24*30)
-                data.push({name: key, value: value});
+                setCookie(key, value, 60 * 60 * 24 * 30)
+                data.push({ name: key, value: value });
             }
         });
 
-        data.push({name: 'id', value: id});
-        data.push({name: 'from_fiat', value: getFromFiatValue()});
-        data.push({name: 'to_fiat', value: getToFiatValue()});
-        data.push({name: 'to_fiat_sum', value: toFiatSum.val()});
-        data.push({name: 'currency_exchange', value: currencyExchange});
+        data.push({ name: 'id', value: id });
+        data.push({ name: 'from_fiat', value: getFromFiatValue() });
+        data.push({ name: 'to_fiat', value: getToFiatValue() });
+        data.push({ name: 'to_fiat_sum', value: toFiatSum.val() });
+        data.push({ name: 'currency_exchange', value: currencyExchange });
 
-        data.push({name: 'from_fiat_sum', value: fromFiatSum.val()});
-        data.push({name: 'from_trade_method', value: fromTradeMethod.val()});
-        data.push({name: 'phone', value: phone.intlTelInput('getNumber')});
-        data.push({name: 'to_trade_method', value: toTradeMethod.val()});
-        data.push({name: 'form_name', value: firstFormName.val()});
+        data.push({ name: 'from_fiat_sum', value: fromFiatSum.val() });
+        data.push({ name: 'from_trade_method', value: fromTradeMethod.val() });
+        data.push({ name: 'phone', value: phone.intlTelInput('getNumber') });
+        data.push({ name: 'to_trade_method', value: toTradeMethod.val() });
+        data.push({ name: 'form_name', value: firstFormName.val() });
 
         if (!isFirstForm) {
             const $fromCardPrefix = $('.js-from_card-prefix', secondForm)
 
-            data.push({name: 'from_card', value: ($fromCardPrefix.html() || '') + fromCard.val()});
-            data.push({name: 'from_name', value: fromName.val()});
+            data.push({ name: 'from_card', value: ($fromCardPrefix.html() || '') + fromCard.val() });
+            data.push({ name: 'from_name', value: fromName.val() });
 
             const $toCardPrefix = $('.js-to_card-prefix', secondForm)
 
-            data.push({name: 'to_card', value: ($toCardPrefix.html() || '') + toCard.val()});
-            data.push({name: 'to_name', value: toName.val()});
-            data.push({name: 'form_name', value: secondFormName.val()});
+            data.push({ name: 'to_card', value: ($toCardPrefix.html() || '') + toCard.val() });
+            data.push({ name: 'to_name', value: toName.val() });
+            data.push({ name: 'form_name', value: secondFormName.val() });
         }
 
         return data;
@@ -586,12 +588,12 @@ const init = (interval, config) => {
 
         isValid = validateSums();
 
-        if(!Iti.isValidNumber(phone)) {
+        if (!Iti.isValidNumber(phone)) {
             showFieldError(phone.parent(), 'Укажите корректный номер телефона.');
             isValid = false;
         }
 
-        if(!isFirstForm) {
+        if (!isFirstForm) {
             [fromName, toName].forEach((field) => {
                 const validationRes = FormHelpers.validateName(field.val(), { withFamily: true })
 

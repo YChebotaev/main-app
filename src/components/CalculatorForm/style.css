@@ -1,8 +1,22 @@
-.u-input__label,
+.u-input__label {
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 17px !important;
+  color: #ffffff !important;
+}
+
+.b-intro-block__rate-label,
+.b-intro-block__time {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
 .b-intro-block__rate-label-text,
 .b-intro-block__time-text,
 .b-intro-block__agreement {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .b-intro-block__rate-label,
@@ -21,4 +35,154 @@
 #to_fiat_sum,
 #from_trade_method .select2-selection__rendered {
   padding-left: 5px;
+}
+
+.select2-selection__rendered {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.u-input__input-container {
+  background: transparent !important;
+}
+
+.select2-container--default .select2-selection--single {
+  background: transparent !important;
+}
+
+.u-input.u-input_with-select .u-input__input {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.select2-selection__rendered {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px !important;
+  line-height: 17px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* .select2-container .select2-selection--single .select2-selection__rendered {
+  color: #ad81f7 !important;
+} */
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow
+  b {
+  border-color: #ad81f7 transparent transparent transparent !important;
+}
+
+.select2-dropdown {
+  background: rgba(173, 129, 247, 0.2);
+  backdrop-filter: blur(8.5px);
+  border: none !important;
+}
+
+.iti__country > .iti__country-name {
+  color: #ffffff !important;
+  font-size: 14px !important;
+}
+
+.select2-results__option[aria-selected="true"],
+.iti__country.iti__highlight {
+  background-color: #8661c5 !important;
+}
+
+.u-input__input-area {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.19) !important;
+}
+
+.b-intro-block__input {
+  margin-bottom: 10px;
+}
+
+.iti__selected-dial-code {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.u-input__input.js-phone-input {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.iti-mobile .iti__country-list {
+  background-color: rgba(173, 129, 247, 0.2) !important;
+  backdrop-filter: blur(8.5px);
+  border: none !important;
+  border-radius: 10px !important;
+}
+
+.b-intro-block__form-button.u-button {
+  display: block;
+  background: linear-gradient(
+      274.09deg,
+      rgba(91, 10, 120, 0.5) 2.7%,
+      rgba(173, 129, 247, 0.5) 98.26%
+    ),
+    #8661c5;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+
+.select2-dropdown {
+  background-color: rgba(173, 129, 247, 0.2) !important;
+  backdrop-filter: blur(8.5px);
+  border: none !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+.select2-results__option {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff !important;
+}
+
+.b-intro-block__disclaimer {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.b-intro-block__disclaimer-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #aaa8f2;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.b-intro-block__disclaimer-icon > img {
+  width: 80%;
+}
+
+.b-intro-block__rate-label-text,
+.b-intro-block__time-text,
+.b-intro-block__disclaimer-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12.5px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.b-intro-block__appendum-wrapper {
+  margin-top: 5px;
 }

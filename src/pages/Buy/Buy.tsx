@@ -4,9 +4,9 @@ import graphExample from "../../assets/images/graph-example.svg";
 // import { About } from "../../components/About";
 import { Header } from "../../components/Header";
 import { Page } from "../../components/Page";
-import { Tabs } from "../../components/Tabs";
-import { Cash } from "./Cash";
-import { Crypto } from "./Crypto";
+// import { Tabs } from "../../components/Tabs";
+// import { Cash } from "./Cash";
+// import { Crypto } from "./Crypto";
 import { Transfer } from "./Transfer";
 import { Profile } from '../../components/Profile'
 
@@ -24,7 +24,8 @@ export const Buy: FC = () => (
     <div className={classes.tabs}>
       <Header>Покупка токена по рынку</Header>
       <div className={classes.tabsWrapper}>
-        <Tabs
+        <Transfer />
+        {/* <Tabs
           initialTab="transfer"
           items={[
             {
@@ -51,7 +52,7 @@ export const Buy: FC = () => (
                 return <Crypto />;
             }
           }}
-        </Tabs>
+        </Tabs> */}
       </div>
     </div>
     <div className={classes.roundBlockWrapper}>

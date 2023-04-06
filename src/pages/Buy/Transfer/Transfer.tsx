@@ -18,12 +18,14 @@ import { CalculatorForm } from "../../../components/CalculatorForm";
 // import { BindingDialog } from "../../../components/BindingDialog";
 // import { Instruction } from "../../../components/Instruction";
 
-// import classes from "./Transfer.module.css";
+import classes from "./Transfer.module.css";
 
 export const Transfer: FC = () => {
 
   return (
-    <CalculatorForm />
+    <div className={classes.transfer}>
+      <CalculatorForm />
+    </div>
   )
   // const userId = useUserId();
   // const apiClient = useApiClient();

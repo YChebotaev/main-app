@@ -1,61 +1,81 @@
-import { useEffect, useRef, type FC } from "react";
+import { useEffect, useRef, useState, type FC } from "react";
 import { Helmet } from "react-helmet";
 
-import { useApiClient, useUserId } from '../../hooks'
+import { useApiClient, useUserId } from "../../hooks";
+import { Appendum } from "../../components/Appendum";
+import infoIconColored from "../../assets/images/info-icon-colored.png";
+import { CryptoInstruction } from "../../components/CryptoInstruction";
 
-import './style.css'
+import "./style.css";
 
 export const CalculatorForm: FC = () => {
-  const apiClient = useApiClient()
-  const userId = useUserId()
+  const apiClient = useApiClient();
+  const userId = useUserId();
   const isRenderedRef = useRef(false);
+  const [isFormSended, setIsFormSended] = useState(false);
 
   useEffect(() => {
     if (isRenderedRef.current === false) {
       isRenderedRef.current = true;
 
       const loadScript = (src: string, isModule: boolean = false) => {
-        const script = document.createElement("script");
+        return new Promise((resolve) => {
+          const script = document.createElement("script");
+          const onLoad = () => {
+            resolve(true);
+            script.removeEventListener("load", onLoad);
+          };
 
-        script.src = src;
-        
-        if (isModule) {
-          script.type = "module"
-        }
+          script.src = src;
+          script.defer = true;
+          script.addEventListener("load", onLoad);
 
-        document.body.appendChild(script);
+          if (isModule) {
+            script.type = "module";
+          } else {
+            script.type = "text/javascript";
+          }
+
+          document.body.appendChild(script);
+        });
       };
 
-      Reflect.set(window, '__user_id__', userId)
-      Reflect.set(window, '__send_form__', apiClient.crypto.purchase)
+      Reflect.set(window, "__user_id__", userId);
+      Reflect.set(window, "__send_form__", apiClient.crypto.purchase);
+      Reflect.set(window, "__send_form_callback__", () => {
+        setIsFormSended(true);
+      });
 
-      loadScript("/libraries/jquery.js");
-      loadScript("/libraries/intl-tel-input/js/intlTelInput-jquery.js");
-      loadScript("/libraries/intl-tel-input/js/utils.js");
-      loadScript("/libraries/inputmask/jquery.inputmask.min.js");
-      loadScript("/libraries/select2/js/select2.full.min.js");
-      loadScript("/scripts/api.js");
-      loadScript("/scripts/iti.js");
-      loadScript("/scripts/constants.js");
-      loadScript("/scripts/config.js");
-      loadScript("/scripts/form-helpers.js");
-      loadScript("/scripts/u-overlay.js");
-      loadScript("/scripts/u-button.js");
-      loadScript("/scripts/u-popup.js");
-      loadScript("/scripts/u-select.js");
-      loadScript("/scripts/b-menu.js");
-      loadScript("/scripts/b-card-popup.js");
-      loadScript("/scripts/b-intro-block.js");
-      loadScript("/scripts/b-application-creating-popup.js");
-      loadScript("/scripts/b-actions.js");
-      loadScript("/scripts/b-reviews.js");
-      loadScript("/scripts/b-faq.js");
-      loadScript("/scripts/b-feedback.js");
-      loadScript("/scripts/u-blur.js");
-      loadScript("/scripts/b-footer.js");
-      loadScript("/scripts/scripts/currency_exchange.js", true);
-      loadScript("/libraries/slick/slick.min.js");
+      (async () => {
+        await loadScript("/libraries/jquery.js");
+        await loadScript("/libraries/intl-tel-input/js/intlTelInput-jquery.js");
+        await loadScript("/libraries/intl-tel-input/js/utils.js");
+        await loadScript("/libraries/inputmask/jquery.inputmask.min.js");
+        await loadScript("/libraries/select2/js/select2.full.min.js");
+        await loadScript("/scripts/api.js");
+        await loadScript("/scripts/iti.js");
+        await loadScript("/scripts/constants.js");
+        await loadScript("/scripts/config.js");
+        await loadScript("/scripts/form-helpers.js");
+        await loadScript("/scripts/u-overlay.js");
+        await loadScript("/scripts/u-button.js");
+        await loadScript("/scripts/u-popup.js");
+        await loadScript("/scripts/u-select.js");
+        await loadScript("/scripts/b-menu.js");
+        await loadScript("/scripts/b-card-popup.js");
+        await loadScript("/scripts/b-intro-block.js");
+        await loadScript("/scripts/b-application-creating-popup.js");
+        await loadScript("/scripts/b-actions.js");
+        await loadScript("/scripts/b-reviews.js");
+        await loadScript("/scripts/b-faq.js");
+        await loadScript("/scripts/b-feedback.js");
+        await loadScript("/scripts/u-blur.js");
+        await loadScript("/scripts/b-footer.js");
+        await loadScript("/scripts/scripts/currency_exchange.js", true);
+        await loadScript("/libraries/slick/slick.min.js");
+      })();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -136,7 +156,7 @@ export const CalculatorForm: FC = () => {
         <link href="/css/b-feedback.css" rel="stylesheet" type="text/css" />
       </Helmet>
       <div className="u-overlay"></div>
-      <div style={{ maxWidth: 400, padding: 10 }}>
+      <div style={{ /*maxWidth: 400, */ padding: 20 }}>
         <form className="b-intro-block__form">
           <div className="b-intro-block__form-inputs">
             <input
@@ -257,14 +277,33 @@ export const CalculatorForm: FC = () => {
                   Время перевода: 15 мин.
                 </span>
               </div>
+              <div className="b-intro-block__disclaimer">
+                <div className="b-intro-block__disclaimer-icon">
+                  <img src={infoIconColored} alt="disclaimer" />
+                </div>
+                <span className="b-intro-block__disclaimer-text">
+                  Курс будет уточнён на момент старта сделки
+                </span>
+              </div>
             </div>
           </div>
           <div className="b-intro-block__form-footer">
             <div className="b-intro-block__result-container"></div>
-            <button className="b-intro-block__form-button u-button">
-              <span className="u-button__content">Отправить заявку</span>
-            </button>
-            <div className="b-intro-block__agreement">
+
+            {isFormSended ? (
+              <CryptoInstruction />
+            ) : (
+              <>
+                <button className="b-intro-block__form-button u-button">
+                  <span className="u-button__content">Отправить заявку</span>
+                </button>
+
+                <div className="b-intro-block__appendum-wrapper">
+                  <Appendum />
+                </div>
+              </>
+            )}
+            {/* <div className="b-intro-block__agreement">
               Нажимая кнопку, вы соглашаетесь{" "}
               <span className="u-ws-nowrap">
                 с{" "}
@@ -272,7 +311,7 @@ export const CalculatorForm: FC = () => {
                   условиями сервиса
                 </a>
               </span>
-            </div>
+            </div> */}
           </div>
         </form>
       </div>

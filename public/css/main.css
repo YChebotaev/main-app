@@ -1,22 +1,22 @@
-html {
+/* html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-}
+} */
 
-body {
+/* body {
     background: #F6F7F9;
     overflow-x: hidden;
-    /*background: gray;*/
-}
+    // background: gray;
+} */
 
-* {
+/* * {
     font-family: 'Montserrat', sans-serif;
-}
+} */
 
-a {
+/* a {
     text-decoration: none;
     color: inherit;
-}
+} */
 
 @font-face {
     font-family: 'Gilroy';

@@ -1,4 +1,9 @@
-import { type CSSProperties, type FC, type ReactNode } from "react";
+import {
+  type CSSProperties,
+  type FC,
+  type ReactNode,
+  type MouseEvent as ReactMouseEvent,
+} from "react";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 
@@ -9,9 +14,11 @@ export const Button: FC<{
   unstyled?: boolean;
   className?: string;
   style?: CSSProperties;
-  type?: 'button' | 'submit' | 'reset'
+  type?: "button" | "submit" | "reset";
   children: ReactNode;
-  onClick?(): void;
+  onClick?(
+    e: ReactMouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
+  ): void;
 }> = ({ to, unstyled, className, style, type, children, onClick }) => {
   if (to) {
     return (

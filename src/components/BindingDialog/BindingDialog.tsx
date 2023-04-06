@@ -4,6 +4,7 @@ import SignClient from "@walletconnect/sign-client";
 
 import { Backdrop } from "../Backdrop";
 import { Button } from "../Button";
+import { useApiClient, useUserId } from "../../hooks";
 
 import classes from "./BindingDialog.module.css";
 
@@ -13,8 +14,10 @@ const web3Modal = new Web3Modal({
 });
 
 export const BindingDialog: FC<{
-  onClose?(): void
+  onClose?(): void;
 }> = ({ onClose }) => {
+  const apiClient = useApiClient();
+  const userId = useUserId();
   const [signClient, setSignClient] = useState<any>(undefined);
 
   useEffect(() => {
@@ -34,30 +37,45 @@ export const BindingDialog: FC<{
         </div>
         <Button
           className={classes.button}
-          onClick={async () => {
-            if (typeof onClose === 'function') {
-              onClose()
+          onClick={async (e) => {
+            e.preventDefault();
+
+            if (typeof onClose === "function") {
+              onClose();
             }
 
             if (signClient) {
               const namespaces = {
                 eip155: {
                   methods: ["eth_sign"],
-                  chains: ["eip155:1"],
+                  chains: ["eip155:56"],
                   events: ["accountsChanged"],
                 },
-              }
+              };
 
               const { uri, approval } = await signClient.connect({
-                requiredNamespaces: namespaces
+                requiredNamespaces: namespaces,
               });
 
               if (uri) {
                 await web3Modal.openModal({
                   uri,
-                  standaloneChains: ["eip155:5"]
+                  standaloneChains: namespaces.eip155.chains,
                 });
-                await approval();
+
+                const r = await approval();
+
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const [_, _2, address] =
+                  r?.namespaces?.eip155?.accounts[0]?.split(":") ?? [];
+
+                if (address) {
+                  await apiClient.crypto.walletAddress({
+                    userId,
+                    address,
+                  });
+                }
+
                 web3Modal.closeModal();
               }
             }

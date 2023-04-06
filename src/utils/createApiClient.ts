@@ -48,6 +48,19 @@ export const createApiClient = () => {
         })
 
         return data
+      },
+      async walletAddress({ userId, address }: { userId: string, address?: string }) {
+        const { data } = await client.post('/crypto/wallet_address', {
+          user_id: userId,
+          address
+        })
+
+        return data
+      },
+      async walletAddressByUserId(userId: string) {
+        const { data } = await client.get<{ address: string }>(`/crypto/wallet_address/${userId}`)
+
+        return data
       }
     },
     numma: {

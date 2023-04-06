@@ -43,12 +43,18 @@ export const Instruction: InstructionType = ({
           <Progress current={currentSlide} total={slidesCount} />
         </div>
         <div className={classes.footerRight}>
-          <Button
-            className={classes.button}
-            onClick={() => setCurrentSlide((currentSlide) => currentSlide + 1)}
-          >
-            Далее
-          </Button>
+          {currentSlide < slidesCount - 1 && (
+            <Button
+              className={classes.button}
+              onClick={(e) => {
+                e.preventDefault();
+
+                setCurrentSlide((currentSlide) => currentSlide + 1);
+              }}
+            >
+              Далее
+            </Button>
+          )}
         </div>
       </div>
     </div>
