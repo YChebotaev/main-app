@@ -1,0 +1,51 @@
+.container {
+}
+
+.input {
+  background-color: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.button {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.button > :global(.selected-flag) {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.button > :global(.selected-flag) {
+  background-color: transparent !important;
+}
+
+.button > :global(.selected-flag) :global(.arrow) {
+  border-top-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dropdown {
+  background-color: rgba(173, 129, 247, 0.2) !important;
+  backdrop-filter: blur(8.5px);
+  border-radius: 0px 0px 10px 10px !important;
+}
+
+.dropdown > :global(.highlight) {
+  background-color: rgba(173, 129, 247, 0.2);
+}
+
+.dropdown > :global(.country:hover) {
+  background-color: rgba(173, 129, 247, 0.2) !important;
+}
+
+.dropdown > :global(.country) > :global(.country-name) {
+  color: #ffffff;
+}
+
+.dropdown > :global(.country) > :global(.dial-code) {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.search {
+}

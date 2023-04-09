@@ -1,15 +1,17 @@
 import { useState, type FC } from "react";
-import { type Control } from "react-hook-form";
+import { useController, type Control } from "react-hook-form";
 
 import { Control as ControlComponent } from "../Control";
 import { Label } from "../Label";
 import { Input } from "../Input";
 import { Selector } from "../Selector";
 import { CURRENCIES } from '../../constants'
+import { ErrorText } from '../ErrorText'
 
 import classes from "./Amount.module.css";
 
 export const Amount: FC<{ control: Control }> = ({ control }) => {
+  const { fieldState } = useController({ control, name: 'amountOfMoney' })
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
 
@@ -42,6 +44,9 @@ export const Amount: FC<{ control: Control }> = ({ control }) => {
           />
         </div>
       </div>
+      {fieldState.invalid && (
+        <ErrorText>{fieldState.error?.message}</ErrorText>
+      )}
     </ControlComponent>
   );
 };

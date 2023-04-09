@@ -24,9 +24,17 @@ export const Profile: FC = () => {
   const [isBindingModalOpen, setIsBindingModalOpen] = useState(false);
   const [isUnbindModalOpen, setIsUnbindModalOpen] = useState(false);
   const walletBound = data ? data.address != null : false;
-  const { mutate } = useMutation(["crypto", "wallet_address"], async () => {
-    return apiClient.crypto.walletAddress({ userId, address: undefined });
-  });
+  const { mutate } = useMutation(
+    ["crypto", "wallet_address"],
+    async () => {
+      return apiClient.crypto.walletAddress({ userId, address: "" });
+    },
+    {
+      onSuccess() {
+        refetch();
+      },
+    },
+  );
 
   if (walletBound) {
     return (

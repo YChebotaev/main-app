@@ -1,13 +1,16 @@
-.transfer {
+/* .transfer {
   background: linear-gradient(162.17deg, rgba(116, 77, 181, 0) -0.53%, rgba(245, 153, 68, 0.09) 79.58%), rgba(176, 120, 231, 0.1);
   border-radius: 10px;
-}
+} */
 
-/* .transfer {
+.transfer {
   display: flex;
   flex-flow: column;
   gap: 20px;
   padding: 20px 0 10px;
+
+  background: linear-gradient(162.17deg, rgba(116, 77, 181, 0) -0.53%, rgba(245, 153, 68, 0.09) 79.58%), rgba(176, 120, 231, 0.1);
+  border-radius: 10px;
 }
 
 .amountWrapper {
@@ -63,4 +66,4 @@
 .instructionWrapper {
   padding: 10px 10px 0px;
   border-top: 1px solid #1d1723;
-} */
+}

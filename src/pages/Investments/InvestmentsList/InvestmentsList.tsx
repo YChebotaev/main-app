@@ -1,15 +1,16 @@
 import { type FC } from "react";
 
-import { EnterRound } from "./EnterRound";
+// import { EnterRound } from "./EnterRound";
 import { BuyToken } from "./BuyToken";
-import { Tabs } from "../../../components/Tabs";
+// import { Tabs } from "../../../components/Tabs";
 
 import classes from "./InvestmentsList.module.css";
 
 export const InvestmentsList: FC = () => {
   return (
     <div className={classes.investmentsList}>
-      <Tabs
+      <BuyToken />
+      {/* <Tabs
         initialTab="buy-token"
         items={[
           {
@@ -32,7 +33,7 @@ export const InvestmentsList: FC = () => {
               return <BuyToken />;
           }
         }}
-      </Tabs>
+      </Tabs> */}
     </div>
   );
 };

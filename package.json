@@ -24,6 +24,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.43.4",
     "react-input-mask": "^2.0.4",
+    "react-phone-input-2": "^2.15.1",
     "react-popper": "^2.3.0",
     "react-query": "^3.39.3",
     "react-router": "^6.8.2",

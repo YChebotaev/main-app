@@ -1,5 +1,5 @@
-import { type FC, useState } from "react";
-import { type Control } from "react-hook-form";
+import { useState, useRef, type FC } from "react";
+import { useController, type Control } from "react-hook-form";
 import { useQuery } from "react-query";
 
 import { Control as ControlComponent } from "../Control";
@@ -9,36 +9,40 @@ import { useApiClient } from "../../hooks";
 
 import classes from "./Bank.module.css";
 
-const BANKS = [
-  {
-    value: "sberbank",
-    name: "Сбербанк",
-  },
-  {
-    value: "raiffaizen",
-    name: "Райффайзен банк",
-  },
-  {
-    value: "qiwi",
-    name: "QIWI",
-  },
-  {
-    value: "home-credit",
-    name: "Хоум Кредит Банк",
-  },
-  {
-    value: "mts",
-    name: "МТС банк",
-  },
-  {
-    value: "tinkoff",
-    name: "Тинькофф",
-  },
-];
+// const BANKS = [
+//   {
+//     value: "sberbank",
+//     name: "Сбербанк",
+//   },
+//   {
+//     value: "raiffaizen",
+//     name: "Райффайзен банк",
+//   },
+//   {
+//     value: "qiwi",
+//     name: "QIWI",
+//   },
+//   {
+//     value: "home-credit",
+//     name: "Хоум Кредит Банк",
+//   },
+//   {
+//     value: "mts",
+//     name: "МТС банк",
+//   },
+//   {
+//     value: "tinkoff",
+//     name: "Тинькофф",
+//   },
+// ];
+
+const NAME = 'bank'
 
 export const Bank: FC<{ control: Control }> = ({ control }) => {
   const apiClient = useApiClient();
-  const { data, isLoading } = useQuery(
+  const isFirstTimeRender = useRef(true)
+  const { field } = useController({ control, name: NAME })
+  const { data } = useQuery(
     ["currency_exchange", "currency_exchanges"],
     async () => {
       const data = await apiClient.numma.currencyExchange.currencyExchanges();
@@ -54,6 +58,15 @@ export const Bank: FC<{ control: Control }> = ({ control }) => {
           }),
         );
       },
+      onSuccess(data) {
+        if (isFirstTimeRender.current) {
+          const firstValue = data[0]
+
+          field.onChange(firstValue)
+
+          Reflect.set(isFirstTimeRender, 'current', false)
+        }
+      }
     },
   );
 
@@ -65,9 +78,8 @@ export const Bank: FC<{ control: Control }> = ({ control }) => {
       <Label>Банк отправителя</Label>
       <div className={classes.selectorWrapper}>
         <Selector
-          name="bank"
+          name={NAME}
           control={control}
-          isLoading={isLoading}
           items={data!}
           referenceElement={referenceElement}
           getItemLabel={({ name }) => name}
