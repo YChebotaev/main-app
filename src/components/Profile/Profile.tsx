@@ -3,8 +3,6 @@ import cn from "classnames";
 import { useQuery, useMutation } from "react-query";
 
 import profileAvatar from "../../assets/images/profile-avatar.jpg";
-import { Button } from "../Button";
-import { BindingDialog } from "../../components/BindingDialog";
 import { UnbindDialog } from "../UnbindDialog";
 import { WalletId } from "../WalletId";
 import { useApiClient, useUserId } from "../../hooks";
@@ -21,7 +19,6 @@ export const Profile: FC = () => {
       return apiClient.crypto.walletAddressByUserId(userId);
     },
   );
-  const [isBindingModalOpen, setIsBindingModalOpen] = useState(false);
   const [isUnbindModalOpen, setIsUnbindModalOpen] = useState(false);
   const walletBound = data ? data.address != null : false;
   const { mutate } = useMutation(
@@ -89,22 +86,15 @@ export const Profile: FC = () => {
       <>
         <div className={classes.profile}>
           <div className={classes.left}>
-            <img className={classes.avatar} src={profileAvatar} alt="" />
+            <img className={cn(classes.avatar, classes.smallAvatar)} src={profileAvatar} alt="" />
           </div>
           <div className={classes.right}>
             <div className={classes.name}>Здравствуйте, Алексей!</div>
             <div className={classes.text}>
-              У вас не привязан ни один криптокошелёк
+              Кошелек не привязан
             </div>
-            <Button
-              className={classes.button}
-              onClick={() => setIsBindingModalOpen(true)}
-            >
-              Привязать кошелёк →
-            </Button>
           </div>
         </div>
-        {isBindingModalOpen && <BindingDialog />}
       </>
     );
   }
