@@ -1,6 +1,6 @@
 .buyToken {
   position: relative;
-  padding: 20px;
+  padding: 30px 20px 20px;
   padding-bottom: 0;
 }
 
@@ -43,13 +43,18 @@
 }
 
 .button2 {
+  display: block;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   text-align: center;
-  color: #ffffff;
-  margin-top: 20px;
+  color: #FFFFFF;
+  background: linear-gradient(274.09deg, rgba(91, 10, 120, 0.5) 2.7%, rgba(173, 129, 247, 0.5) 98.26%), #B078E7;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 0;
+  margin-top: 15px;
 }
 
 .coin1 {

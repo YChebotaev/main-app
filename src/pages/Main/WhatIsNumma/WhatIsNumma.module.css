@@ -3,8 +3,7 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   margin-top: -20px;
-  padding: 20px;
-  padding-bottom: 40px;
+  padding: 15px 20px 35px;
 }
 
 .title {
@@ -29,6 +28,8 @@
 
 .wallet {
   position: absolute;
+  top: 254px;
+  left: 13px;
   width: 105px;
   height: 110px;
   background-image: url("../../../assets/images/what-is-numma-wallet.png");
@@ -41,6 +42,7 @@
   gap: 20px;
   width: 50vw;
   margin-top: 20px;
+  transform: translate(-20px, -10px);
 }
 
 .left {
