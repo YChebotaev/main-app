@@ -71,7 +71,7 @@ export const createApiClient = () => {
             trade_method_name: string
           }[]
         }> {
-          const { data } = await axios.get('http://api.numma-teat.online/currency_exchange/currency_exchanges')
+          const { data } = await axios.get('https://api.numma-teat.online/currency_exchange/currency_exchanges')
 
           return data
         },
@@ -91,7 +91,7 @@ export const createApiClient = () => {
           min_amount?: number
           max_amount?: number
         }> {
-          const { data } = await axios.get('http://api.numma-teat.online/currency_exchange/main_exchange', {
+          const { data } = await axios.get('https://api.numma-teat.online/currency_exchange/main_exchange', {
             params: {
               from_fiat: fromFiat,
               from_trade_method: fromTradeMethod,
