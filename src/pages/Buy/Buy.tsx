@@ -1,6 +1,6 @@
 import { type FC } from "react";
 
-import graphExample from "../../assets/images/graph-example.svg";
+// import graphExample from "../../assets/images/graph-example.svg";
 // import { About } from "../../components/About";
 import { Header } from "../../components/Header";
 import { Page } from "../../components/Page";
@@ -8,14 +8,17 @@ import { Page } from "../../components/Page";
 // import { Cash } from "./Cash";
 // import { Crypto } from "./Crypto";
 import { Transfer } from "./Transfer";
-import { Profile } from '../../components/Profile'
+import { Profile } from "../../components/Profile";
+import { Samopiar } from "../../components/Samopiar";
+import { MediaList } from "../../components/MediaList";
+import { RatingsList } from '../../components/RatingsList'
 
 import classes from "./Buy.module.css";
 
 export const Buy: FC = () => (
   <Page
     withBackButton
-    backButton={{ to: "/investments?back=true" }}
+    backButton={{ to: "/?back=true" }}
     className={classes.round}
   >
     <div className={classes.profileWrapper}>
@@ -55,7 +58,52 @@ export const Buy: FC = () => (
         </Tabs> */}
       </div>
     </div>
-    <div className={classes.roundBlockWrapper}>
+    <div className={classes.processBlockWrapper}>
+      <Header level={2} className={classes.header}>
+        Как происходит покупка токена
+      </Header>
+      <div className={classes.processBlock}>
+        <div className={classes.processLine}>
+          <div className={classes.processNumber}>01/</div>
+          <div className={classes.processText}>
+            Вы привязываете в боте свой крипто-кошелек
+          </div>
+        </div>
+        <div className={classes.processLine}>
+          <div className={classes.processNumber}>02/</div>
+          <div className={classes.processText}>
+            Совершаете перевод в удобном вам формате
+          </div>
+        </div>
+        <div className={classes.processLine}>
+          <div className={classes.processNumber}>03/</div>
+          <div className={classes.processText}>
+            Мы фиксируем за вами сумму токенов на вашу сумму инвестиций в момент
+            сделки
+          </div>
+        </div>
+        <div className={classes.processLine}>
+          <div className={classes.processNumber}>04/</div>
+          <div className={classes.processText}>
+            Токен упадёт вам в кошелек в течение часа по цене, зафиксированной в
+            момент сделки
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className={classes.samopiarWrapper}>
+      <Header className={classes.samopiarHeader}>О токене MAIN</Header>
+      <Samopiar />
+    </div>
+    <div className={classes.mediaWrapper}>
+      <Header className={classes.mediaHeader}>О MAIN пишут</Header>
+      <MediaList />
+    </div>
+    <div className={classes.ratingsWrapper}>
+      <Header className={classes.ratingsHeader}>Крипто рейтинги</Header>
+      <RatingsList />
+    </div>
+    {/* <div className={classes.roundBlockWrapper}>
       <div className={classes.roundBlock}>
         <Header level={2} className={classes.header}>
           ROUND
@@ -83,11 +131,11 @@ export const Buy: FC = () => (
           </div>
         </div>
       </div>
-    </div>
-    <div className={classes.graphWrapper}>
+    </div> */}
+    {/* <div className={classes.graphWrapper}>
       <img src={graphExample} className={classes.graph} alt="" />
-    </div>
-    <div className={classes.processBlockWrapper}>
+    </div> */}
+    {/* <div className={classes.processBlockWrapper}>
       <Header level={2} className={classes.header}>
         Процесс входа в ROUND
       </Header>
@@ -118,7 +166,7 @@ export const Buy: FC = () => (
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
     <div className={classes.faqBlockWrapper}>
       <Header level={2} className={classes.header}>
         FAQ

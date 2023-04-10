@@ -1,0 +1,73 @@
+.buyToken {
+  position: relative;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.smallMainLogo {
+  display: inline-block;
+  background-image: url("../../../assets/images/buy-token-logo-main.png");
+  width: 24px;
+  height: 18px;
+  background-size: cover;
+  margin-left: 5px;
+}
+
+.number {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+  color: #c184ff;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.button2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+.coin1 {
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  width: 67px;
+  height: 67px;
+  background-image: url("../../../assets/images/buy-token-logo-bnb.svg");
+  background-size: cover;
+}
+
+.coin2 {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  width: 34px;
+  height: 34px;
+  background-image: url("../../../assets/images/buy-token-logo-c.svg");
+  background-size: cover;
+}

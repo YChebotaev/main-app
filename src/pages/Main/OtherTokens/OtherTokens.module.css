@@ -1,0 +1,54 @@
+.otherTokens {
+  background: #F0EDF5;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: -20px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  color: #3f3a40;
+}
+
+.list {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.itemIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  background: rgba(240, 237, 245, 0.22);
+  box-shadow: 2px 2px 3px rgba(173, 129, 247, 0.3);
+}
+
+.itemIcon {
+}
+
+.itemText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: rgba(63, 58, 64, 0.6);
+}

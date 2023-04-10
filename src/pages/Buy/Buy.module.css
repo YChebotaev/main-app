@@ -24,7 +24,7 @@
 }
 
 .header {
-  color: #AD81F7;
+  color: #ad81f7;
 }
 
 .roundText {
@@ -46,7 +46,7 @@
 }
 
 .advantageHeader {
-  color: #AD81F7;
+  color: #ad81f7;
 }
 
 .advantageText {
@@ -88,7 +88,7 @@
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
-  color: #AD81F7;
+  color: #ad81f7;
 }
 
 .processText {
@@ -96,7 +96,7 @@
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .faqBlockWrapper {
@@ -127,4 +127,35 @@
   font-size: 14px;
   line-height: 17px;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.samopiarWrapper {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.samopiarHeader {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.mediaWrapper {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.mediaHeader {
+  margin-bottom: 10px;
+}
+
+.ratingsWrapper {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.ratingsHeader {
+  margin-bottom: 10px;
 }

@@ -88,6 +88,8 @@ export const createApiClient = () => {
             code: number | null
           }
           service_commission_usdt: number
+          min_amount?: number
+          max_amount?: number
         }> {
           const { data } = await axios.get('http://api.numma-teat.online/currency_exchange/main_exchange', {
             params: {

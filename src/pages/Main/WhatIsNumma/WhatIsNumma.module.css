@@ -1,0 +1,81 @@
+.whatIsNumma {
+  background-color: #ffffff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: -20px;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #3f3a40;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(63, 58, 64, 0.7);
+  margin-top: 10px;
+}
+
+.columnsWrapper {
+}
+
+.wallet {
+  position: absolute;
+  width: 105px;
+  height: 110px;
+  background-image: url("../../../assets/images/what-is-numma-wallet.png");
+  background-size: cover;
+}
+
+.columns {
+  float: right;
+  display: flex;
+  gap: 20px;
+  width: 50vw;
+  margin-top: 20px;
+}
+
+.left {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+.right {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+.number {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  background: linear-gradient(180deg, #b27ce7 0%, rgba(178, 124, 231, 0) 100%),
+    #8ec5e4;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.numberText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: rgba(63, 58, 64, 0.6);
+}
+
+.clear {
+  clear: both;
+}

@@ -21,7 +21,7 @@
   background-size: cover;
   width: 125px;
   height: 20px;
-  background-image: url("../../../assets/images/rating-list-logo-dapp-radar.svg");
+  background-image: url("../../assets/images/rating-list-logo-dapp-radar.svg");
 }
 
 .itemBody {
@@ -39,7 +39,7 @@
   background-size: cover;
   width: 42px;
   height: 37px;
-  background-image: url("../../../assets/images/rating-list-logo-main.svg");
+  background-image: url("../../assets/images/rating-list-logo-main.svg");
 }
 
 .bodyMainWrapper {

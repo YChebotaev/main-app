@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import cn from 'classnames'
+import cn from "classnames";
 
 import classes from "./Samopiar.module.css";
 
@@ -11,7 +11,7 @@ export const Samopiar: FC = () => (
       </div>
       <div className={classes.textWrapper}>
         <div className={classes.text}>
-          <span className={classes.textHighlight}>Мы создали MDK</span> и
+          <span className={classes.textHighlight}>Фаундеры создали MDK</span> и
           превратили его в №1 медиа в социальных сетях рунета
         </div>
       </div>
@@ -23,9 +23,9 @@ export const Samopiar: FC = () => (
       <div className={classes.textWrapper}>
         <div className={classes.text}>
           <span className={classes.textHighlight}>
-            Мы научили пользователей зарабатывать
+            Научили пользователей зарабатывать
           </span>{" "}
-          на своём креативе: на 1.7 млн постов мы выплатили 45 млн наград
+          на своём креативе: на 1.7 млн постов MAIN мы выплатили 45 млн наград
         </div>
       </div>
     </div>
@@ -36,9 +36,9 @@ export const Samopiar: FC = () => (
       <div className={classes.textWrapper}>
         <div className={classes.text}>
           <span className={classes.textHighlight}>
-            Мы работаем на переднем крае технологий
+            MAIN работает на переднем крае технологий
           </span>{" "}
-          блокчейна с 2018 года и используем все преимущества Web3.0 в нашем
+          блокчейна с 2018 года и использует все преимущества Web3.0 в своём
           продукте
         </div>
       </div>

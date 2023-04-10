@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { VictoryLine } from "victory";
 
-import dummyGraphImage from "../../../assets/images/rating-list-graph-dummy.svg";
+import dummyGraphImage from "../../assets/images/rating-list-graph-dummy.svg";
 
 import classes from "./RatingsList.module.css";
 

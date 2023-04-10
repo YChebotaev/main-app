@@ -23,6 +23,14 @@ export const Page: FC<{
   children,
 }) => (
   <div className={cn(classes.page, className)} style={style}>
+    {!withLogo && withBackButton && (
+      <Header
+        logo={null}
+        backButton={
+          backButton ? <BackButton {...backButton} /> : <BackButton />
+        }
+      />
+    )}
     {withLogo && !withBackButton && (
       <div className={classes.logoWrapper}>
         <Logo />

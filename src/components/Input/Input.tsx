@@ -12,6 +12,7 @@ export const Input: FC<{
   className?: string;
   style?: CSSProperties;
   onBlur?(): void;
+  onFocus?(): void;
 }> = ({
   name,
   control,
@@ -20,6 +21,7 @@ export const Input: FC<{
   className,
   style,
   onBlur,
+  onFocus,
 }) => {
   const { field } = useController({ control, name });
 
@@ -46,6 +48,7 @@ export const Input: FC<{
           onBlur();
         }
       }}
+      onFocus={onFocus}
     />
   );
 };

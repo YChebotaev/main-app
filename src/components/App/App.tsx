@@ -6,6 +6,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Main } from "../../pages/Main";
 import { Investments } from "../../pages/Investments";
 import { Buy } from "../../pages/Buy";
+import { Webinar } from '../../pages/Webinar'
 
 import classes from "./App.module.css";
 
@@ -41,6 +42,7 @@ export const App: FC = () => {
       >
         <Routes key={location.key} location={location}>
           <Route path="/" element={<Main />} />
+          <Route path="/webinar" element={<Webinar />} />
           <Route path="/investments" element={<Investments />} />
           <Route path="/investments/buy" element={<Buy />} />
         </Routes>

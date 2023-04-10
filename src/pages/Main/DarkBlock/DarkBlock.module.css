@@ -1,0 +1,11 @@
+.darkBlock {
+  background: linear-gradient(
+      189.36deg,
+      rgba(173, 129, 247, 0.335) 7.15%,
+      rgba(91, 10, 120, 0.095) 92.93%
+    ),
+    #1d1723;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: -30px;
+}

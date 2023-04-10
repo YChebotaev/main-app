@@ -5,13 +5,16 @@ import { Control as ControlComponent } from "../Control";
 import { Label } from "../Label";
 import { Input } from "../Input";
 import { Selector } from "../Selector";
-import { CURRENCIES } from '../../constants'
-import { ErrorText } from '../ErrorText'
+import { CURRENCIES } from "../../constants";
+import { ErrorText } from "../ErrorText";
 
 import classes from "./Amount.module.css";
 
-export const Amount: FC<{ control: Control }> = ({ control }) => {
-  const { fieldState } = useController({ control, name: 'amountOfMoney' })
+export const Amount: FC<{ control: Control; onFocus?(): void }> = ({
+  control,
+  onFocus,
+}) => {
+  const { fieldState } = useController({ control, name: "amountOfMoney" });
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
 
@@ -20,7 +23,12 @@ export const Amount: FC<{ control: Control }> = ({ control }) => {
       <Label>Хочу отправить</Label>
       <div className={classes.columns}>
         <div className={classes.left}>
-          <Input name="amountOfMoney" type="number" control={control} />
+          <Input
+            name="amountOfMoney"
+            type="number"
+            control={control}
+            onFocus={onFocus}
+          />
         </div>
         <div className={classes.right}>
           <Selector
@@ -44,9 +52,7 @@ export const Amount: FC<{ control: Control }> = ({ control }) => {
           />
         </div>
       </div>
-      {fieldState.invalid && (
-        <ErrorText>{fieldState.error?.message}</ErrorText>
-      )}
+      {fieldState.invalid && <ErrorText>{fieldState.error?.message}</ErrorText>}
     </ControlComponent>
   );
 };

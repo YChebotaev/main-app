@@ -9,7 +9,8 @@
   gap: 10px;
 }
 
-.iconWrapper {}
+.iconWrapper {
+}
 
 .icon {
   background-size: cover;
@@ -18,15 +19,15 @@
 }
 
 .icon1 {
-  background-image: url("../../../assets/images/samopiar-icon-mdk.png");
+  background-image: url("../../assets/images/samopiar-icon-mdk.png");
 }
 
 .icon2 {
-  background-image: url("../../../assets/images/samopiar-icon-money.png");
+  background-image: url("../../assets/images/samopiar-icon-money.png");
 }
 
 .icon3 {
-  background-image: url("../../../assets/images/samopiar-icon-cryptocurrency-blockchain.png");
+  background-image: url("../../assets/images/samopiar-icon-cryptocurrency-blockchain.png");
 }
 
 .textWrapper {
@@ -42,5 +43,5 @@
 }
 
 .textHighlight {
-  color: #AD81F7;
+  color: #ad81f7;
 }

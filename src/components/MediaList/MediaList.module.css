@@ -24,13 +24,13 @@
 .itemLogo1 {
   width: 60px;
   height: 16px;
-  background-image: url("../../../assets/images/media-list-logo-rbc.svg");
+  background-image: url("../../assets/images/media-list-logo-rbc.svg");
 }
 
 .itemLogo2 {
   width: 51px;
   height: 18px;
-  background-image: url("../../../assets/images/media-list-logo-rb.svg");
+  background-image: url("../../assets/images/media-list-logo-rb.svg");
 }
 
 .itemTextWrapper {

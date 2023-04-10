@@ -1,0 +1,58 @@
+.footer {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #18141A;
+}
+
+.line1 {
+  display: flex;
+  gap: 20px;
+}
+
+.line1Link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: #ffffff;
+}
+
+.line2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+}
+
+.line3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line3Left {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.line3Right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line3Link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.line3NummaLogo {
+  width: 85px;
+}

@@ -1,0 +1,95 @@
+.eventDetails {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoLeft {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #c184ff;
+}
+
+.infoRight {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.speakersWrapper {
+  background: rgba(173, 129, 247, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.speakersHeader {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.usersList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  flex-flow: column;
+}
+
+.userAvatar {
+  background-image: url("../../assets/images/webinar-user-avatar-dummy.png");
+  background-size: cover;
+  width: 60px;
+  height: 80px;
+}
+
+.userName {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #ffffff;
+}
+
+.about {
+}
+
+.aboutTitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.aboutText {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;  
+  color: rgba(255, 255, 255, 0.8);
+}

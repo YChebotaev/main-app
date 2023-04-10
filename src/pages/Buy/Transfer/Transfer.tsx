@@ -25,7 +25,8 @@ export const Transfer: FC = () => {
     getValues,
     setValue,
     setError,
-    handleSubmit
+    clearErrors,
+    handleSubmit,
   } = useForm<any>({
     defaultValues: {
       amountOfMoney: 10000,
@@ -58,11 +59,28 @@ export const Transfer: FC = () => {
           setValue("getMoney", data.client_main);
         }
 
-        if (data.operation_status.message !== 'Операция успешно выполнена.') {
-          setError('amountOfMoney', {
-            type: 'custom',
-            message: data.operation_status.message
-          })
+        if (data.operation_status.message !== "Операция успешно выполнена.") {
+          setError("amountOfMoney", {
+            type: "custom",
+            message: data.operation_status.message,
+          });
+        }
+
+        const amountOfMoney = getValues("amountOfMoney");
+        if ("min_amount" in data) {
+          if (amountOfMoney < data.min_amount!) {
+            setValue("amountOfMoney", data.min_amount!);
+            setError("amountOfMoney", {
+              type: "custom",
+              message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+            });
+          } else if (amountOfMoney > data.max_amount!) {
+            setValue("amountOfMoney", data.max_amount!);
+            setError("amountOfMoney", {
+              type: "custom",
+              message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+            });
+          }
         }
       },
     },
@@ -109,7 +127,10 @@ export const Transfer: FC = () => {
     <>
       <form className={classes.transfer} onSubmit={handleSubmit(mutate as any)}>
         <div className={classes.amountWrapper}>
-          <Amount control={control} />
+          <Amount
+            control={control}
+            onFocus={() => clearErrors("amountOfMoney")}
+          />
         </div>
         <div className={classes.bankWrapper}>
           <Bank control={control} />
@@ -146,20 +167,7 @@ export const Transfer: FC = () => {
             <Info.Line colored>
               Курс будет уточнён на момент старта сделки
             </Info.Line>
-            {data && (
-              <Info.Line colored>
-                <b>
-                  При входе в ROUND на эту сумму вы получите {data.client_main}{" "}
-                  MAIN (<span style={{ color: "green" }}>+20%</span>)
-                </b>
-              </Info.Line>
-            )}
           </Info>
-        </div>
-        <div className={classes.detailsLinkWrapper}>
-          <a href="/" className={classes.detailsLink}>
-            Подробнее
-          </a>
         </div>
         {isInstructionOpen ? (
           <div className={classes.instructionWrapper}>
