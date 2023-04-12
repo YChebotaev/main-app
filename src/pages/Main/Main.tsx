@@ -24,8 +24,8 @@ export const Main: FC = () => {
 
   return (
     <div className={classes.main}>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-      <pre>{window.location.href}</pre>
+      {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
+      {/* <pre>{window.location.href}</pre> */}
 
       <Head />
       <WhatIsNumma />
