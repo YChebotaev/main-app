@@ -1,5 +1,7 @@
-export const getTelegramUserId = () => {
-  const t = Reflect.get(window, 'Telegram')
+import { getTelegramUser } from './getTelegramUser'
 
-  return t.WebApp.initDataUnsafe.user?.id ?? process.env['REACT_APP_DUMMY_USER_ID']
+export const getTelegramUserId = () => {
+  const user = getTelegramUser()
+
+  return user?.id ?? process.env['REACT_APP_DUMMY_USER_ID']
 }

@@ -21,3 +21,26 @@
   padding: 10px 10px 0px;
   border-top: 1px solid #1D1723;
 }
+
+.buttonWrapper {
+  padding: 0 15px;
+}
+
+.button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.appendumWrapper {
+  padding: 0 15px;
+}
+
+.instructionWrapper {
+  padding: 10px 10px 0px;
+  border-top: 1px solid #1d1723;
+}
+

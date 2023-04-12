@@ -4,9 +4,9 @@ import { type FC } from "react";
 // import { About } from "../../components/About";
 import { Header } from "../../components/Header";
 import { Page } from "../../components/Page";
-// import { Tabs } from "../../components/Tabs";
+import { Tabs } from "../../components/Tabs";
 // import { Cash } from "./Cash";
-// import { Crypto } from "./Crypto";
+import { Crypto } from "./Crypto";
 import { Transfer } from "./Transfer";
 import { Profile } from "../../components/Profile";
 import { Samopiar } from "../../components/Samopiar";
@@ -27,18 +27,17 @@ export const Buy: FC = () => (
     <div className={classes.tabs}>
       <Header>Покупка токена по рынку</Header>
       <div className={classes.tabsWrapper}>
-        <Transfer />
-        {/* <Tabs
+        <Tabs
           initialTab="transfer"
           items={[
             {
               key: "transfer",
               name: "Перевод",
             },
-            {
-              key: "cash",
-              name: "Наличные",
-            },
+            // {
+            //   key: "cash",
+            //   name: "Наличные",
+            // },
             {
               key: "crypto",
               name: "Крипто",
@@ -49,13 +48,13 @@ export const Buy: FC = () => (
             switch (tabId) {
               case "transfer":
                 return <Transfer />;
-              case "cash":
-                return <Cash />;
+              // case "cash":
+              //   return <Cash />;
               case "crypto":
                 return <Crypto />;
             }
           }}
-        </Tabs> */}
+        </Tabs>
       </div>
     </div>
     <div className={classes.processBlockWrapper}>

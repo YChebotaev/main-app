@@ -5,7 +5,7 @@ import { useQuery, useMutation } from "react-query";
 import profileAvatar from "../../assets/images/profile-avatar.jpg";
 import { UnbindDialog } from "../UnbindDialog";
 import { WalletId } from "../WalletId";
-import { useApiClient, useUserId } from "../../hooks";
+import { useApiClient, useUserId, useTelegramUser } from "../../hooks";
 
 import classes from "./Profile.module.css";
 
@@ -13,6 +13,7 @@ export const Profile: FC = () => {
   // const [walletBound, setIsWalletBound] = useState(false);
   const apiClient = useApiClient();
   const userId = useUserId();
+  const user = useTelegramUser();
   const { data, refetch } = useQuery(
     ["crypto", "wallet_address", userId],
     async () => {
@@ -33,19 +34,28 @@ export const Profile: FC = () => {
     },
   );
 
+  console.log("user =", user);
+
   if (walletBound) {
     return (
       <>
         <div className={classes.profile}>
           <div className={classes.left}>
-            <img
-              className={cn(classes.avatar, walletBound && classes.smallAvatar)}
-              src={profileAvatar}
-              alt=""
-            />
+            {user && (
+              <img
+                className={cn(
+                  classes.avatar,
+                  walletBound && classes.smallAvatar,
+                )}
+                src={user.photo_url}
+                alt=""
+              />
+            )}
           </div>
           <div className={classes.right}>
-            <div className={classes.name}>Алексей К.</div>
+            <div className={classes.name}>
+              {user?.first_name} {user?.last_name?.slice(0, 1)?.toUpperCase()}.
+            </div>
             <div className={classes.walletInfo}>
               {data && <WalletId address={data.address} />}
               <div className={classes.unbindWrapper}>
@@ -86,13 +96,20 @@ export const Profile: FC = () => {
       <>
         <div className={classes.profile}>
           <div className={classes.left}>
-            <img className={cn(classes.avatar, classes.smallAvatar)} src={profileAvatar} alt="" />
+            {user && (
+              <img
+                className={cn(classes.avatar, classes.smallAvatar)}
+                src={user.photo_url}
+                alt=""
+              />
+            )}
           </div>
           <div className={classes.right}>
-            <div className={classes.name}>Здравствуйте, Алексей!</div>
-            <div className={classes.text}>
-              Кошелек не привязан
+            <div className={classes.name}>
+              Здравствуйте, {user?.first_name}{" "}
+              {user?.last_name?.slice(0, 1)?.toUpperCase()}.!
             </div>
+            <div className={classes.text}>Кошелек не привязан</div>
           </div>
         </div>
       </>

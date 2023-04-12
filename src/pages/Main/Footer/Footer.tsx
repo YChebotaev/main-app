@@ -6,13 +6,13 @@ import nummaLogo from "../../../assets/images/appendum-logo-numma.png";
 export const Footer: FC = () => (
   <div className={classes.footer}>
     <div className={classes.line1}>
-      <a className={classes.line1Link} href="#">
+      <a className={classes.line1Link} href="https://numma.org/#it-works">
         Как это работает
       </a>
-      <a className={classes.line1Link} href="#">
+      <a className={classes.line1Link} href="https://numma.org/#faq">
         FAQ
       </a>
-      <a className={classes.line1Link} href="#">
+      <a className={classes.line1Link} href="https://numma.org/#reviews">
         Отзывы
       </a>
     </div>
@@ -21,10 +21,10 @@ export const Footer: FC = () => (
     </div>
     <div className={classes.line3}>
       <div className={classes.line3Left}>
-        <a className={classes.line3Link} href="#">
+        <a className={classes.line3Link} href="https://numma.org/privacy">
           Политика конфиденциальности
         </a>
-        <a className={classes.line3Link} href="#">
+        <a className={classes.line3Link} href="https://numma.org/terms">
           Пользовательское соглашение
         </a>
       </div>

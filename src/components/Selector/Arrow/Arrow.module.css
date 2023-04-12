@@ -1,7 +1,7 @@
 .arrow {
   border: none;
   background: transparent;
-  background-size: cover;
+  background-size: contain;
   width: 10px;
   height: 6px;
 }

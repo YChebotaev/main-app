@@ -24,3 +24,26 @@ export const CURRENCIES = [
     name: "Российский рубль",
   },
 ];
+
+export const CRYPTO_CURRENCIES = [
+  {
+    value: 'USDT',
+    name: 'USDT'
+  },
+  {
+    value: 'USDC',
+    name: 'USDC'
+  },
+  {
+    value: 'BTC',
+    name: 'BTC'
+  },
+  {
+    value: 'ETH',
+    name: 'ETH'
+  },
+  {
+    value: 'BNB',
+    name: 'BNB'
+  }
+];

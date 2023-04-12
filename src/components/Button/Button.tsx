@@ -11,6 +11,7 @@ import classes from "./Button.module.css";
 
 export const Button: FC<{
   to?: string;
+  target?: string;
   unstyled?: boolean;
   className?: string;
   style?: CSSProperties;
@@ -19,11 +20,12 @@ export const Button: FC<{
   onClick?(
     e: ReactMouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
   ): void;
-}> = ({ to, unstyled, className, style, type, children, onClick }) => {
+}> = ({ to, target, unstyled, className, style, type, children, onClick }) => {
   if (to) {
     return (
       <Link
         to={to}
+        target={target}
         className={cn(!unstyled && classes.button, className)}
         style={style}
         onClick={onClick}

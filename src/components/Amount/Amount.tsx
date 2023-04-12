@@ -5,15 +5,16 @@ import { Control as ControlComponent } from "../Control";
 import { Label } from "../Label";
 import { Input } from "../Input";
 import { Selector } from "../Selector";
-import { CURRENCIES } from "../../constants";
+import { CURRENCIES, CRYPTO_CURRENCIES } from "../../constants";
 import { ErrorText } from "../ErrorText";
 
 import classes from "./Amount.module.css";
 
-export const Amount: FC<{ control: Control; onFocus?(): void }> = ({
-  control,
-  onFocus,
-}) => {
+export const Amount: FC<{
+  control: Control;
+  isCrypto?: boolean;
+  onFocus?(): void;
+}> = ({ control, isCrypto = false, onFocus }) => {
   const { fieldState } = useController({ control, name: "amountOfMoney" });
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
@@ -35,7 +36,7 @@ export const Amount: FC<{ control: Control; onFocus?(): void }> = ({
             highlighted
             name="coinType"
             control={control}
-            items={CURRENCIES}
+            items={isCrypto ? CRYPTO_CURRENCIES : CURRENCIES}
             referenceElement={referenceElement}
             getItemLabel={({ value }) => value}
             getItemKey={({ value }) => value}

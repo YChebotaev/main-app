@@ -13,6 +13,8 @@ import { useApiClient, useUserId } from "../../../hooks";
 import { CURRENCIES } from "../../../constants";
 import { BindingDialog } from "../../../components/BindingDialog";
 import { Instruction } from "../../../components/Instruction";
+import timeIcon from "../../../assets/images/time.svg";
+import courseIcon from "../../../assets/images/course.svg";
 
 import classes from "./Transfer.module.css";
 
@@ -157,13 +159,15 @@ export const Transfer: FC = () => {
         <div className={classes.infoWrapper}>
           <Info>
             {data && (
-              <Info.Line>
+              <Info.Line icon={<img src={courseIcon} alt="" />}>
                 <b>Курс</b>
                 {"  "}1 {watch("coinType.value")} ={" "}
-                <b>{data.currency_exchange} MAIN</b>
+                <b>{Number(data.currency_exchange).toFixed(5)} MAIN</b>
               </Info.Line>
             )}
-            <Info.Line>Время перевода: 15 мин.</Info.Line>
+            <Info.Line icon={<img src={timeIcon} alt="" />}>
+              Время перевода: 15 мин.
+            </Info.Line>
             <Info.Line colored>
               Курс будет уточнён на момент старта сделки
             </Info.Line>

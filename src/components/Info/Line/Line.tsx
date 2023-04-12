@@ -4,14 +4,19 @@ import cn from "classnames";
 import classes from "./Line.module.css";
 
 export const Line: FC<{
+  icon?: ReactNode;
   colored?: boolean;
   className?: string;
   style?: CSSProperties;
   children: ReactNode;
-}> = ({ colored = false, className, style, children }) => (
+}> = ({ icon, colored = false, className, style, children }) => (
   <div className={cn(classes.line, className)} style={style}>
     <div className={classes.left}>
-      <div className={cn(classes.icon, colored && classes.iconColored)} />
+      {icon ? (
+        icon
+      ) : (
+        <div className={cn(classes.icon, colored && classes.iconColored)} />
+      )}
     </div>
     <div className={classes.right}>{children}</div>
   </div>

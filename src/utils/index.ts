@@ -1,2 +1,5 @@
 export * from './getTelegramUserId'
 export * from './createApiClient'
+export * from './createWeb3Modal'
+export * from './getWeb3ModalApproval'
+export * from './getTelegramUser'

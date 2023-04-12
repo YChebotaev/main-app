@@ -4,6 +4,9 @@ export const createApiClient = () => {
   const client = axios.create({
     baseURL: process.env['REACT_APP_BACKEND_URL']
   })
+  const nummaApiClient = axios.create({
+    baseURL: process.env['REACT_APP_NUMMA_API_URL']
+  })
 
   return {
     async signUpWebinar({ userId }: { userId: string }) {
@@ -25,7 +28,7 @@ export const createApiClient = () => {
         phoneNumber,
         purchaseType,
       }: {
-        userId: number
+        userId: string
         amountOfMoney: number
         mainCourse: number
         bank: string
@@ -91,10 +94,20 @@ export const createApiClient = () => {
           min_amount?: number
           max_amount?: number
         }> {
-          const { data } = await axios.get('https://api.numma-teat.online/currency_exchange/main_exchange', {
+          const { data } = await nummaApiClient.get('/currency_exchange/main_exchange', {
             params: {
               from_fiat: fromFiat,
               from_trade_method: fromTradeMethod,
+              amount
+            }
+          })
+
+          return data
+        },
+        async cryptoExchange({ fromCrypto, amount }: { fromCrypto: string, amount: number }) {
+          const { data } = await nummaApiClient.get('/currency_exchange/crypto_exchange', {
+            params: {
+              from_crypto: fromCrypto,
               amount
             }
           })

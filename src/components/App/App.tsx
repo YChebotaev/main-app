@@ -7,6 +7,7 @@ import { Main } from "../../pages/Main";
 import { Investments } from "../../pages/Investments";
 import { Buy } from "../../pages/Buy";
 import { Webinar } from '../../pages/Webinar'
+import { BindWallet } from '../../pages/BindWallet'
 
 import classes from "./App.module.css";
 
@@ -45,6 +46,7 @@ export const App: FC = () => {
           <Route path="/webinar" element={<Webinar />} />
           <Route path="/investments" element={<Investments />} />
           <Route path="/investments/buy" element={<Buy />} />
+          <Route path="/bind_wallet" element={<BindWallet />} />
         </Routes>
       </CSSTransition>
     </TransitionGroup>
