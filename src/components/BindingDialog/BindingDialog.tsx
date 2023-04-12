@@ -41,7 +41,7 @@ export const BindingDialog: FC<{
         </div>
         <Button
           to="/bind_wallet"
-          target="_blank"
+          target="_top"
           className={classes.button}
           onClick={() => {
             if (typeof onClose === "function") {
