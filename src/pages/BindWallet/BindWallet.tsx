@@ -35,5 +35,5 @@ export const BindWallet: FC = () => {
     }
   }, [signClient, apiClient, userId]);
 
-  return <div className={classes.bindWallet}>{null}</div>;
+  return <div className={classes.bindWallet}>{window.location.href}</div>;
 };
