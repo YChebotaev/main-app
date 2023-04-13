@@ -40,7 +40,7 @@ export const BindingDialog: FC<{
           MAIN
         </div>
         <Button
-          to="https://main-app-three.vercel.app/bind_wallet"
+          to="/bind_wallet"
           target="_top"
           className={classes.button}
           onClick={() => {
