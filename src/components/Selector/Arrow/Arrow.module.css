@@ -15,9 +15,9 @@
 }
 
 .arrowOpened {
-  background-image: url("../../../assets/images/selector-arrow-down.svg");
+  background-image: url("../../../assets/images/selector-arrow-up.svg");
 }
 
 .arrowClosed {
-  background-image: url("../../../assets/images/selector-arrow-up.svg");
+  background-image: url("../../../assets/images/selector-arrow-down.svg");
 }
