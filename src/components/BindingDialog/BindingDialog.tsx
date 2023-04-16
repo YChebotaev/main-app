@@ -40,6 +40,8 @@ export const BindingDialog: FC<{
                 web3Modal,
               });
 
+              web3Modal.closeModal();
+
               // eslint-disable-next-line @typescript-eslint/no-unused-vars
               const [_, _2, address] =
                 r?.namespaces?.eip155?.accounts[0]?.split(":") ?? [];
@@ -50,8 +52,6 @@ export const BindingDialog: FC<{
                   address,
                 });
               }
-
-              web3Modal.closeModal();
             }
           }}
         >
