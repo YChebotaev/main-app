@@ -1,6 +1,4 @@
-import { /* useState, useEffect, */ type FC } from "react";
-// import { Web3Modal } from "@web3modal/standalone";
-// import SignClient from "@walletconnect/sign-client";
+import { type FC } from "react";
 
 import { Backdrop } from "../Backdrop";
 import { Button } from "../Button";
@@ -8,11 +6,6 @@ import { useApiClient, useUserId, useSignClient } from "../../hooks";
 import { createWeb3Modal, getWeb3ModalApproval } from "../../utils";
 
 import classes from "./BindingDialog.module.css";
-
-// const web3Modal = new Web3Modal({
-//   projectId: process.env["REACT_APP_WALLET_CONNECT_PROJECT_ID"]!,
-//   walletConnectVersion: 2,
-// });
 
 const web3Modal = createWeb3Modal();
 
@@ -22,15 +15,6 @@ export const BindingDialog: FC<{
   const apiClient = useApiClient();
   const userId = useUserId();
   const signClient = useSignClient();
-  // const [signClient, setSignClient] = useState<any>(undefined);
-
-  // useEffect(() => {
-  //   SignClient.init({
-  //     projectId: process.env["REACT_APP_WALLET_CONNECT_PROJECT_ID"]!,
-  //   }).then((client) => {
-  //     setSignClient(client);
-  //   });
-  // }, []);
 
   return (
     <Backdrop className={classes.backdrop}>
@@ -55,25 +39,6 @@ export const BindingDialog: FC<{
                 signClient,
                 web3Modal,
               });
-              // const namespaces = {
-              //   eip155: {
-              //     methods: ["eth_sign"],
-              //     chains: ["eip155:56"],
-              //     events: ["accountsChanged"],
-              //   },
-              // };
-
-              // const { uri, approval } = await signClient.connect({
-              //   requiredNamespaces: namespaces,
-              // });
-
-              // if (uri) {
-              //   await web3Modal.openModal({
-              //     uri,
-              //     standaloneChains: namespaces.eip155.chains,
-              //   });
-
-              //   const r = await approval();
 
               // eslint-disable-next-line @typescript-eslint/no-unused-vars
               const [_, _2, address] =
@@ -87,7 +52,6 @@ export const BindingDialog: FC<{
               }
 
               web3Modal.closeModal();
-              // }
             }
           }}
         >
