@@ -87,47 +87,12 @@ export const Transfer: FC = () => {
       },
     },
   );
-  const { mutate } = useMutation(
-    ["crypto", "purchase"],
-    async ({
-      amountOfMoney,
-      bank,
-      coinType,
-      getMoney,
-      phoneNumber,
-    }: {
-      amountOfMoney: number;
-      bank: {
-        name: string;
-        value: string;
-      };
-      coinType: {
-        name: string;
-        value: string;
-      };
-      getMoney: number;
-      phoneNumber: string;
-    }) => {
-      const purchaseData = await apiClient.crypto.purchase({
-        userId,
-        amountOfMoney,
-        mainCourse: data?.client_main as number,
-        bank: bank.value,
-        coinType: coinType.value,
-        getMoney,
-        phoneNumber,
-        purchaseType: "Перевод",
-      });
-
-      return purchaseData;
-    },
-  );
   const [isBindingModalOpen, setIsBindingModalOpen] = useState(false);
   const [isInstructionOpen, setIsInstructionOpen] = useState(false);
 
   return (
     <>
-      <form className={classes.transfer} onSubmit={handleSubmit(mutate as any)}>
+      <form className={classes.transfer}>
         <div className={classes.amountWrapper}>
           <Amount
             control={control}
@@ -182,7 +147,22 @@ export const Transfer: FC = () => {
             <Button
               type="submit"
               className={classes.button}
-              onClick={() => setIsInstructionOpen(true)}
+              onClick={async (e) => {
+                e.preventDefault();
+
+                await apiClient.crypto.purchase({
+                  userId,
+                  amountOfMoney: getValues("amountOfMoney"),
+                  mainCourse: data?.client_main as number,
+                  bank: getValues("bank").value,
+                  coinType: getValues("coinType").value,
+                  getMoney: getValues("getMoney"),
+                  phoneNumber: getValues("phoneNumber"),
+                  purchaseType: "Перевод",
+                });
+
+                setIsInstructionOpen(true);
+              }}
             >
               Отправить заявку
             </Button>

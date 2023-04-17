@@ -47,6 +47,8 @@ export const BindingDialog: FC<{
                 r?.namespaces?.eip155?.accounts[0]?.split(":") ?? [];
 
               if (address) {
+                document.body.innerText = address;
+
                 await apiClient.crypto.walletAddress({
                   userId,
                   address,
