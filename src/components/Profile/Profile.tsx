@@ -34,8 +34,6 @@ export const Profile: FC = () => {
     },
   );
 
-  console.log("user =", user);
-
   if (walletBound) {
     return (
       <>

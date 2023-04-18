@@ -14,7 +14,8 @@ export const Amount: FC<{
   control: Control;
   isCrypto?: boolean;
   onFocus?(): void;
-}> = ({ control, isCrypto = false, onFocus }) => {
+  onBlur?(): void;
+}> = ({ control, isCrypto = false, onFocus, onBlur }) => {
   const { fieldState } = useController({ control, name: "amountOfMoney" });
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
@@ -26,9 +27,11 @@ export const Amount: FC<{
         <div className={classes.left}>
           <Input
             name="amountOfMoney"
-            type="number"
+            pattern="\d*"
             control={control}
+            className={classes.input}
             onFocus={onFocus}
+            onBlur={onBlur}
           />
         </div>
         <div className={classes.right}>

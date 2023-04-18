@@ -1,4 +1,4 @@
-import { useState, type FC } from "react";
+import { useState, type FC, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation, useQuery } from "react-query";
 
@@ -21,74 +21,119 @@ import classes from "./Transfer.module.css";
 export const Transfer: FC = () => {
   const userId = useUserId();
   const apiClient = useApiClient();
-  const {
-    control,
-    watch,
-    getValues,
-    setValue,
-    setError,
-    clearErrors,
-    handleSubmit,
-  } = useForm<any>({
-    defaultValues: {
-      amountOfMoney: 10000,
-      coinType: CURRENCIES.find(({ value }) => value === "RUB"),
-    },
-  });
-  const { data } = useQuery(
-    [
-      "numma",
-      "currencyExchange",
-      "mainExchange",
-      {
-        fromFiat: watch("coinType")?.value,
-        fromTradeMethod: watch("bank")?.value,
-        amount: watch("amountOfMoney"),
+  const { control, watch, getValues, setValue, setError, clearErrors } =
+    useForm<any>({
+      defaultValues: {
+        amountOfMoney: 10000,
+        coinType: CURRENCIES.find(({ value }) => value === "RUB"),
       },
-    ],
-    async () => {
-      const data = apiClient.numma.currencyExchange.mainExchange({
-        fromFiat: getValues("coinType.value"),
-        fromTradeMethod: getValues("bank.value"),
-        amount: getValues("amountOfMoney"),
-      });
+    });
+  const [data, setData] = useState<any>();
+  // const { data } = useQuery(
+  //   [
+  //     "numma",
+  //     "currencyExchange",
+  //     "mainExchange",
+  //     {
+  //       fromFiat: watch("coinType")?.value,
+  //       fromTradeMethod: watch("bank")?.value,
+  //       amount: watch("amountOfMoney"),
+  //     },
+  //   ],
+  //   async () => {
+  //     const data = await apiClient.numma.currencyExchange.mainExchange({
+  //       fromFiat: getValues("coinType.value"),
+  //       fromTradeMethod: getValues("bank.value"),
+  //       amount: getValues("amountOfMoney"),
+  //     });
 
-      return data;
-    },
-    {
-      onSuccess(data) {
-        if (data.client_main) {
-          setValue("getMoney", data.client_main);
-        }
+  //     return data;
+  //   },
+  //   {
+  //     onSuccess(data) {
+  //       if (data.client_main) {
+  //         setValue("getMoney", data.client_main);
+  //       }
 
-        if (data.operation_status.message !== "Операция успешно выполнена.") {
-          setError("amountOfMoney", {
-            type: "custom",
-            message: data.operation_status.message,
-          });
-        }
+  //       if (data.operation_status.message !== "Операция успешно выполнена.") {
+  //         setError("amountOfMoney", {
+  //           type: "custom",
+  //           message: data.operation_status.message,
+  //         });
+  //       }
 
-        const amountOfMoney = getValues("amountOfMoney");
-        if ("min_amount" in data) {
-          if (amountOfMoney < data.min_amount!) {
-            setValue("amountOfMoney", data.min_amount!);
-            setError("amountOfMoney", {
-              type: "custom",
-              message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
-            });
-          } else if (amountOfMoney > data.max_amount!) {
-            setValue("amountOfMoney", data.max_amount!);
-            setError("amountOfMoney", {
-              type: "custom",
-              message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
-            });
-          }
-        }
-      },
-    },
-  );
+  //       const amountOfMoney = getValues("amountOfMoney");
+  //       if ("min_amount" in data) {
+  //         if (amountOfMoney < data.min_amount!) {
+  //           setValue("amountOfMoney", data.min_amount!);
+  //           setError("amountOfMoney", {
+  //             type: "custom",
+  //             message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+  //           });
+  //         } else if (amountOfMoney > data.max_amount!) {
+  //           setValue("amountOfMoney", data.max_amount!);
+  //           setError("amountOfMoney", {
+  //             type: "custom",
+  //             message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+  //           });
+  //         }
+  //       }
+  //     },
+  //   },
+  // );
   const [isBindingModalOpen, setIsBindingModalOpen] = useState(false);
   const [isInstructionOpen, setIsInstructionOpen] = useState(false);
+  const handleAmountChange = async () => {
+    let bank = getValues("bank")?.value;
+
+    if (bank == null) {
+      const { from_trade_methods } =
+        await apiClient.numma.currencyExchange.currencyExchanges();
+
+      bank = from_trade_methods[0].trade_method;
+    }
+
+    const data = await apiClient.numma.currencyExchange.mainExchange({
+      fromFiat: getValues("coinType.value"),
+      fromTradeMethod: bank, // ?? getValues("bank.value"),
+      amount: getValues("amountOfMoney"),
+    });
+
+    if (data.client_main) {
+      setValue("getMoney", data.client_main);
+    }
+
+    if (data.operation_status.message !== "Операция успешно выполнена.") {
+      setError("amountOfMoney", {
+        type: "custom",
+        message: data.operation_status.message,
+      });
+    }
+
+    const amountOfMoney = getValues("amountOfMoney");
+    if ("min_amount" in data) {
+      if (amountOfMoney < data.min_amount!) {
+        setValue("amountOfMoney", data.min_amount!);
+        setError("amountOfMoney", {
+          type: "custom",
+          message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+        });
+      } else if (amountOfMoney > data.max_amount!) {
+        setValue("amountOfMoney", data.max_amount!);
+        setError("amountOfMoney", {
+          type: "custom",
+          message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+        });
+      }
+    }
+
+    setData(data);
+  };
+
+  useEffect(() => {
+    handleAmountChange();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -97,6 +142,7 @@ export const Transfer: FC = () => {
           <Amount
             control={control}
             onFocus={() => clearErrors("amountOfMoney")}
+            onBlur={handleAmountChange}
           />
         </div>
         <div className={classes.bankWrapper}>
@@ -154,8 +200,8 @@ export const Transfer: FC = () => {
                   userId,
                   amountOfMoney: getValues("amountOfMoney"),
                   mainCourse: data?.client_main as number,
-                  bank: getValues("bank").value,
-                  coinType: getValues("coinType").value,
+                  bank: getValues("bank")?.value,
+                  coinType: getValues("coinType")?.value,
                   getMoney: getValues("getMoney"),
                   phoneNumber: getValues("phoneNumber"),
                   purchaseType: "Перевод",

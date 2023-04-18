@@ -13,5 +13,8 @@ export const Arrow: FC<{ isOpen: boolean; highlighted: boolean }> = ({
       highlighted && classes.arrowHighlighted,
       isOpen ? classes.arrowOpened : classes.arrowClosed,
     )}
+    onClick={(e) => {
+      e.preventDefault();
+    }}
   />
 );

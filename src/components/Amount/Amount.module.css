@@ -41,3 +41,7 @@
   line-height: 17px;
   color: #ffffff;
 }
+
+.input {
+  box-sizing: border-box;
+}

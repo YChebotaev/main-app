@@ -9,6 +9,7 @@ export const Input: FC<{
   control: Control;
   readonly?: boolean;
   type?: "number" | "text";
+  pattern?: string
   className?: string;
   style?: CSSProperties;
   onBlur?(): void;
@@ -18,6 +19,7 @@ export const Input: FC<{
   control,
   readonly = false,
   type = "text",
+  pattern,
   className,
   style,
   onBlur,
@@ -29,6 +31,7 @@ export const Input: FC<{
     <input
       {...field}
       type={type}
+      pattern={pattern}
       className={cn(classes.input, className)}
       disabled={readonly}
       style={style}
