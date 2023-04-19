@@ -46,6 +46,8 @@ export const BindingDialog: FC<{
               const [_, _2, address] =
                 r?.namespaces?.eip155?.accounts[0]?.split(":") ?? [];
 
+              document.body.innerText = address
+
               if (address) {
                 document.body.innerText = address;
 
