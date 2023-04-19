@@ -137,7 +137,12 @@ export const Transfer: FC = () => {
 
   return (
     <>
-      <form className={classes.transfer}>
+      <form
+        className={classes.transfer}
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <div className={classes.amountWrapper}>
           <Amount
             control={control}
