@@ -15,7 +15,16 @@ export const Instruction: FC<{
         <Button className={classes.noButton}>Нет</Button>
       </div>
       <div className={classes.footerRight}>
-        <Button className={classes.yesButton} onClick={onClickYes}>
+        <Button
+          className={classes.yesButton}
+          onClick={(e) => {
+            e.preventDefault();
+
+            if (typeof onClickYes === "function") {
+              onClickYes();
+            }
+          }}
+        >
           Да
         </Button>
       </div>
