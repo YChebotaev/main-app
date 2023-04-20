@@ -11,3 +11,11 @@
   line-height: 17px;
   color: #ffffff;
 }
+
+.selectorCurrentItem {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.8);
+}

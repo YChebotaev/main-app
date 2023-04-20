@@ -20,6 +20,7 @@ export const Selector = <O extends { name: string; value: string }>({
   referenceElement,
   highlighted = false,
   className,
+  currentItemClassName,
   style,
   getItemLabel,
   getItemKey,
@@ -32,6 +33,7 @@ export const Selector = <O extends { name: string; value: string }>({
   referenceElement: HTMLDivElement | null;
   highlighted?: boolean;
   className?: string;
+  currentItemClassName?: string,
   style?: CSSProperties;
   getItemLabel(item: O): ReactNode;
   getItemKey(item: O): Key;
@@ -114,6 +116,7 @@ export const Selector = <O extends { name: string; value: string }>({
         className={cn(
           classes.currentItem,
           highlighted && classes.currentItemHighlighted,
+          currentItemClassName,
         )}
         {...getToggleButtonProps()}
       >

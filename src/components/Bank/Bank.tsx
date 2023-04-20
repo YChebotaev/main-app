@@ -87,6 +87,7 @@ export const Bank: FC<{ control: Control }> = ({ control }) => {
           renderItem={({ name }) => (
             <span className={classes.option}>{name}</span>
           )}
+          currentItemClassName={classes.selectorCurrentItem}
         />
       </div>
     </ControlComponent>
