@@ -230,6 +230,9 @@ export const Crypto: FC = () => {
                 getMoney: getValues("getMoney"),
                 purchaseType: "Крипто",
               });
+
+              const T = Reflect.get(window, "Telegram");
+              T.WebApp.close();
             }}
           >
             Отправить заявку

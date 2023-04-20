@@ -154,6 +154,9 @@ export const Transfer: FC = () => {
                 phoneNumber: getValues("phoneNumber"),
                 purchaseType: "Перевод",
               });
+
+              const T = Reflect.get(window, "Telegram");
+              T.WebApp.close();
             }}
           >
             Отправить заявку
