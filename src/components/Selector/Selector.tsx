@@ -24,6 +24,7 @@ export const Selector = <O extends { name: string; value: string }>({
   getItemLabel,
   getItemKey,
   renderItem,
+  onChange,
 }: {
   name: string;
   control: Control;
@@ -35,10 +36,9 @@ export const Selector = <O extends { name: string; value: string }>({
   getItemLabel(item: O): ReactNode;
   getItemKey(item: O): Key;
   renderItem(item: O): ReactNode;
+  onChange?(): void
 }) => {
-  const {
-    field: { value, onChange },
-  } = useController({ control, name });
+  const { field } = useController({ control, name });
   const {
     isOpen,
     selectedItem,
@@ -48,9 +48,13 @@ export const Selector = <O extends { name: string; value: string }>({
     getItemProps,
   } = useSelect({
     items: items ? items : [],
-    selectedItem: value,
+    selectedItem: field.value,
     onSelectedItemChange({ selectedItem }: UseSelectStateChange<O>) {
-      onChange(selectedItem);
+      field.onChange(selectedItem);
+
+      if (typeof onChange === 'function') {
+        onChange()
+      }
     },
   });
 

@@ -15,7 +15,8 @@ export const Amount: FC<{
   isCrypto?: boolean;
   onFocus?(): void;
   onBlur?(): void;
-}> = ({ control, isCrypto = false, onFocus, onBlur }) => {
+  onCurrencyChange?(): void
+}> = ({ control, isCrypto = false, onFocus, onBlur, onCurrencyChange }) => {
   const { fieldState } = useController({ control, name: "amountOfMoney" });
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
@@ -53,6 +54,7 @@ export const Amount: FC<{
                 </div>
               </div>
             )}
+            onChange={onCurrencyChange}
           />
         </div>
       </div>
