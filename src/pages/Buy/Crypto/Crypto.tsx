@@ -1,6 +1,6 @@
-import { useState, type FC } from "react";
+import { useState, useEffect, type FC } from "react";
 import { useForm } from "react-hook-form";
-import { useMutation, useQuery } from "react-query";
+// import { useMutation, useQuery } from "react-query";
 
 import { Amount } from "../../../components/Amount";
 import { Receive } from "../../../components/Receive";
@@ -9,7 +9,7 @@ import { useUserId, useApiClient } from "../../../hooks";
 import { CRYPTO_CURRENCIES } from "../../../constants";
 import { BindingDialog } from "../../../components/BindingDialog";
 import { Button } from "../../../components/Button";
-import { Instruction } from "../../../components/Instruction";
+// import { Instruction } from "../../../components/Instruction";
 import { Appendum } from "../../../components/Appendum";
 
 import classes from "./Crypto.module.css";
@@ -17,6 +17,7 @@ import classes from "./Crypto.module.css";
 export const Crypto: FC = () => {
   const userId = useUserId();
   const apiClient = useApiClient();
+  const [data, setData] = useState<any>();
   const {
     control,
     watch,
@@ -31,97 +32,152 @@ export const Crypto: FC = () => {
       coinType: CRYPTO_CURRENCIES.find(({ value }) => value === "USDT"),
     },
   });
-  const { data } = useQuery(
-    [
-      "numma",
-      "currencyExchange",
-      "cryptoExchange",
-      {
-        fromCrypto: watch("coinType")?.value,
-        amount: watch("amountOfMoney"),
-      },
-    ],
-    async () => {
-      const data = await apiClient.numma.currencyExchange.cryptoExchange({
-        fromCrypto: getValues("coinType")?.value,
-        amount: getValues("amountOfMoney"),
-      });
+  // const { data } = useQuery(
+  //   [
+  //     "numma",
+  //     "currencyExchange",
+  //     "cryptoExchange",
+  //     {
+  //       fromCrypto: watch("coinType")?.value,
+  //       amount: watch("amountOfMoney"),
+  //     },
+  //   ],
+  //   async () => {
+  //     const data = await apiClient.numma.currencyExchange.cryptoExchange({
+  //       fromCrypto: getValues("coinType")?.value,
+  //       amount: getValues("amountOfMoney"),
+  //     });
 
-      return data;
-    },
-    {
-      onSuccess(data) {
-        if (data.client_main) {
-          setValue("getMoney", data.client_main);
-        }
+  //     return data;
+  //   },
+  //   {
+  //     onSuccess(data) {
+  //       if (data.client_main) {
+  //         setValue("getMoney", data.client_main);
+  //       }
 
-        if (data.operation_status.message !== "Операция успешно выполнена.") {
-          setError("amountOfMoney", {
-            type: "custom",
-            message: data.operation_status.message,
-          });
-        }
+  //       if (data.operation_status.message !== "Операция успешно выполнена.") {
+  //         setError("amountOfMoney", {
+  //           type: "custom",
+  //           message: data.operation_status.message,
+  //         });
+  //       }
 
-        const amountOfMoney = getValues("amountOfMoney");
-        if ("min_amount" in data) {
-          if (amountOfMoney < data.min_amount!) {
-            setValue("amountOfMoney", data.min_amount!);
-            setError("amountOfMoney", {
-              type: "custom",
-              message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
-            });
-          } else if (amountOfMoney > data.max_amount!) {
-            setValue("amountOfMoney", data.max_amount!);
-            setError("amountOfMoney", {
-              type: "custom",
-              message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
-            });
-          }
-        }
-      },
-    },
-  );
-  const { mutate } = useMutation(
-    ["crypto", "purchase"],
-    async ({
-      amountOfMoney,
-      bank,
-      coinType,
-      getMoney,
-      phoneNumber,
-    }: {
-      amountOfMoney: number;
-      bank: {
-        name: string;
-        value: string;
-      };
-      coinType: {
-        name: string;
-        value: string;
-      };
-      getMoney: number;
-      phoneNumber: string;
-    }) => {
-      const purchaseData = await apiClient.crypto.purchase({
-        userId,
-        amountOfMoney,
-        mainCourse: data?.client_main as number,
-        bank: bank.value,
-        coinType: coinType.value,
-        getMoney,
-        phoneNumber,
-        purchaseType: "Перевод",
-      });
+  //       const amountOfMoney = getValues("amountOfMoney");
+  //       if ("min_amount" in data) {
+  //         if (amountOfMoney < data.min_amount!) {
+  //           setValue("amountOfMoney", data.min_amount!);
+  //           setError("amountOfMoney", {
+  //             type: "custom",
+  //             message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+  //           });
+  //         } else if (amountOfMoney > data.max_amount!) {
+  //           setValue("amountOfMoney", data.max_amount!);
+  //           setError("amountOfMoney", {
+  //             type: "custom",
+  //             message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+  //           });
+  //         }
+  //       }
+  //     },
+  //   },
+  // );
+  // const { mutate } = useMutation(
+  //   ["crypto", "purchase"],
+  //   async ({
+  //     amountOfMoney,
+  //     bank,
+  //     coinType,
+  //     getMoney,
+  //     phoneNumber,
+  //   }: {
+  //     amountOfMoney: number;
+  //     bank: {
+  //       name: string;
+  //       value: string;
+  //     };
+  //     coinType: {
+  //       name: string;
+  //       value: string;
+  //     };
+  //     getMoney: number;
+  //     phoneNumber: string;
+  //   }) => {
+  //     const purchaseData = await apiClient.crypto.purchase({
+  //       userId,
+  //       amountOfMoney,
+  //       mainCourse: data?.client_main as number,
+  //       bank: bank.value,
+  //       coinType: coinType.value,
+  //       getMoney,
+  //       phoneNumber,
+  //       purchaseType: "Перевод",
+  //     });
 
-      return purchaseData;
-    },
-  );
+  //     return purchaseData;
+  //   },
+  // );
   const [isBindingModalOpen, setIsBindingModalOpen] = useState(false);
-  const [isInstructionOpen, setIsInstructionOpen] = useState(false);
+  // const [isInstructionOpen, setIsInstructionOpen] = useState(false);
+  const handleAmountChange = async () => {
+    let bank = getValues("bank")?.value;
+
+    if (bank == null) {
+      const { from_trade_methods } =
+        await apiClient.numma.currencyExchange.currencyExchanges();
+
+      bank = from_trade_methods[0].trade_method;
+    }
+
+    const data = await apiClient.numma.currencyExchange.cryptoExchange({
+      fromCrypto: getValues("coinType")?.value,
+      amount: getValues("amountOfMoney"),
+    });
+
+    if (data.client_main) {
+      setValue("getMoney", data.client_main);
+    }
+
+    if (data.operation_status.message !== "Операция успешно выполнена.") {
+      setError("amountOfMoney", {
+        type: "custom",
+        message: data.operation_status.message,
+      });
+    }
+
+    const amountOfMoney = getValues("amountOfMoney");
+    if ("min_amount" in data) {
+      if (amountOfMoney < data.min_amount!) {
+        setValue("amountOfMoney", data.min_amount!);
+        setError("amountOfMoney", {
+          type: "custom",
+          message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+        });
+      } else if (amountOfMoney > data.max_amount!) {
+        setValue("amountOfMoney", data.max_amount!);
+        setError("amountOfMoney", {
+          type: "custom",
+          message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
+        });
+      }
+    }
+
+    setData(data);
+  };
+
+  useEffect(() => {
+    handleAmountChange();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
-      <div className={classes.crypto} onSubmit={handleSubmit(mutate as any)}>
+      <div
+        className={classes.crypto}
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <div className={classes.amountWrapper}>
           <Amount
             isCrypto
@@ -135,10 +191,11 @@ export const Crypto: FC = () => {
             onBlur={async () => {
               const amountOfMoney = getValues("amountOfMoney") as number;
               const getMoney = getValues("getMoney") as number;
-              const data = await apiClient.numma.currencyExchange.cryptoExchange({
-                fromCrypto: getValues("coinType.value"),
-                amount: amountOfMoney,
-              });
+              const data =
+                await apiClient.numma.currencyExchange.cryptoExchange({
+                  fromCrypto: getValues("coinType.value"),
+                  amount: amountOfMoney,
+                });
 
               setValue("amountOfMoney", getMoney / data.currency_exchange);
             }}
@@ -158,7 +215,27 @@ export const Crypto: FC = () => {
             </Info.Line>
           </Info>
         </div>
-        {isInstructionOpen ? (
+        <div className={classes.buttonWrapper}>
+          <Button
+            type="submit"
+            className={classes.button}
+            onClick={async (e) => {
+              e.preventDefault();
+
+              await apiClient.crypto.purchase({
+                userId,
+                amountOfMoney: getValues("amountOfMoney"),
+                mainCourse: data?.client_main as number,
+                coinType: getValues("coinType")?.value,
+                getMoney: getValues("getMoney"),
+                purchaseType: "Крипто",
+              });
+            }}
+          >
+            Отправить заявку
+          </Button>
+        </div>
+        {/* {isInstructionOpen ? (
           <div className={classes.instructionWrapper}>
             <Instruction onClickYes={() => setIsBindingModalOpen(true)} />
           </div>
@@ -172,7 +249,7 @@ export const Crypto: FC = () => {
               Отправить заявку
             </Button>
           </div>
-        )}
+        )} */}
         <div className={classes.appendumWrapper}>
           <Appendum />
         </div>

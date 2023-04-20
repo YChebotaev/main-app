@@ -1,6 +1,6 @@
 import { useState, type FC, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useMutation, useQuery } from "react-query";
+// import { useMutation, useQuery } from "react-query";
 
 import { Amount } from "../../../components/Amount";
 import { Bank } from "../../../components/Bank";
@@ -12,7 +12,7 @@ import { Button } from "../../../components/Button";
 import { useApiClient, useUserId } from "../../../hooks";
 import { CURRENCIES } from "../../../constants";
 import { BindingDialog } from "../../../components/BindingDialog";
-import { Instruction } from "../../../components/Instruction";
+// import { Instruction } from "../../../components/Instruction";
 import timeIcon from "../../../assets/images/time.svg";
 import courseIcon from "../../../assets/images/course.svg";
 
@@ -29,60 +29,8 @@ export const Transfer: FC = () => {
       },
     });
   const [data, setData] = useState<any>();
-  // const { data } = useQuery(
-  //   [
-  //     "numma",
-  //     "currencyExchange",
-  //     "mainExchange",
-  //     {
-  //       fromFiat: watch("coinType")?.value,
-  //       fromTradeMethod: watch("bank")?.value,
-  //       amount: watch("amountOfMoney"),
-  //     },
-  //   ],
-  //   async () => {
-  //     const data = await apiClient.numma.currencyExchange.mainExchange({
-  //       fromFiat: getValues("coinType.value"),
-  //       fromTradeMethod: getValues("bank.value"),
-  //       amount: getValues("amountOfMoney"),
-  //     });
-
-  //     return data;
-  //   },
-  //   {
-  //     onSuccess(data) {
-  //       if (data.client_main) {
-  //         setValue("getMoney", data.client_main);
-  //       }
-
-  //       if (data.operation_status.message !== "Операция успешно выполнена.") {
-  //         setError("amountOfMoney", {
-  //           type: "custom",
-  //           message: data.operation_status.message,
-  //         });
-  //       }
-
-  //       const amountOfMoney = getValues("amountOfMoney");
-  //       if ("min_amount" in data) {
-  //         if (amountOfMoney < data.min_amount!) {
-  //           setValue("amountOfMoney", data.min_amount!);
-  //           setError("amountOfMoney", {
-  //             type: "custom",
-  //             message: `Сумма была изменена на минимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
-  //           });
-  //         } else if (amountOfMoney > data.max_amount!) {
-  //           setValue("amountOfMoney", data.max_amount!);
-  //           setError("amountOfMoney", {
-  //             type: "custom",
-  //             message: `Сумма была изменена на максимально возможную. Укажите сумму от ${data.min_amount!} до ${data.max_amount!}`,
-  //           });
-  //         }
-  //       }
-  //     },
-  //   },
-  // );
   const [isBindingModalOpen, setIsBindingModalOpen] = useState(false);
-  const [isInstructionOpen, setIsInstructionOpen] = useState(false);
+  // const [isInstructionOpen, setIsInstructionOpen] = useState(false);
   const handleAmountChange = async () => {
     let bank = getValues("bank")?.value;
 
@@ -189,7 +137,29 @@ export const Transfer: FC = () => {
             </Info.Line>
           </Info>
         </div>
-        {isInstructionOpen ? (
+        <div className={classes.buttonWrapper}>
+          <Button
+            type="submit"
+            className={classes.button}
+            onClick={async (e) => {
+              e.preventDefault();
+
+              await apiClient.crypto.purchase({
+                userId,
+                amountOfMoney: getValues("amountOfMoney"),
+                mainCourse: data?.client_main as number,
+                bank: getValues("bank")?.value,
+                coinType: getValues("coinType")?.value,
+                getMoney: getValues("getMoney"),
+                phoneNumber: getValues("phoneNumber"),
+                purchaseType: "Перевод",
+              });
+            }}
+          >
+            Отправить заявку
+          </Button>
+        </div>
+        {/* {isInstructionOpen ? (
           <div className={classes.instructionWrapper}>
             <Instruction onClickYes={() => setIsBindingModalOpen(true)} />
           </div>
@@ -218,7 +188,7 @@ export const Transfer: FC = () => {
               Отправить заявку
             </Button>
           </div>
-        )}
+        )} */}
         <div className={classes.appendumWrapper}>
           <Appendum />
         </div>

@@ -31,7 +31,7 @@ export const createApiClient = () => {
         userId: string
         amountOfMoney: number
         mainCourse: number
-        bank: string
+        bank?: string
         city?: string
         coinType: string
         getMoney: number

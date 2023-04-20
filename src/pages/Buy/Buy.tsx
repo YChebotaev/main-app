@@ -8,7 +8,7 @@ import { Tabs } from "../../components/Tabs";
 // import { Cash } from "./Cash";
 import { Crypto } from "./Crypto";
 import { Transfer } from "./Transfer";
-import { Profile } from "../../components/Profile";
+// import { Profile } from "../../components/Profile";
 import { Samopiar } from "../../components/Samopiar";
 import { MediaList } from "../../components/MediaList";
 import { RatingsList } from '../../components/RatingsList'
@@ -21,9 +21,9 @@ export const Buy: FC = () => (
     backButton={{ to: "/?back=true" }}
     className={classes.round}
   >
-    <div className={classes.profileWrapper}>
+    {/* <div className={classes.profileWrapper}>
       <Profile />
-    </div>
+    </div> */}
     <div className={classes.tabs}>
       <Header>Покупка токена по рынку</Header>
       <div className={classes.tabsWrapper}>
