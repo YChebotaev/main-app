@@ -36,7 +36,9 @@ export const Transfer: FC = () => {
 
     if (bank == null) {
       const { from_trade_methods } =
-        await apiClient.numma.currencyExchange.currencyExchanges();
+        await apiClient.numma.currencyExchange.currencyExchanges({
+          fromFiat: getValues('coinType')?.value,
+        });
 
       bank = from_trade_methods[0].trade_method;
     }
@@ -96,10 +98,15 @@ export const Transfer: FC = () => {
             control={control}
             onFocus={() => clearErrors("amountOfMoney")}
             onBlur={handleAmountChange}
+            onCurrencyChange={handleAmountChange}
           />
         </div>
         <div className={classes.bankWrapper}>
-          <Bank control={control} />
+          <Bank
+            control={control}
+            fromFiat={watch("coinType")?.value}
+            onChange={handleAmountChange}
+          />
         </div>
         <div className={classes.receiveWrapper}>
           <Receive

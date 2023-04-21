@@ -68,13 +68,17 @@ export const createApiClient = () => {
     },
     numma: {
       currencyExchange: {
-        async currencyExchanges(): Promise<{
+        async currencyExchanges({ fromFiat }: { fromFiat?: string }): Promise<{
           from_trade_methods: {
             trade_method: string
             trade_method_name: string
           }[]
         }> {
-          const { data } = await axios.get('https://api.numma-teat.online/currency_exchange/currency_exchanges')
+          const { data } = await nummaApiClient.get('/currency_exchange/currency_exchanges', {
+            params: {
+              from_fiat: fromFiat
+            }
+          })
 
           return data
         },

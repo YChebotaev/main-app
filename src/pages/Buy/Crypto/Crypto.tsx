@@ -36,15 +36,6 @@ export const Crypto: FC = () => {
   const [isBindingModalOpen, setIsBindingModalOpen] = useState(false);
   // const [isInstructionOpen, setIsInstructionOpen] = useState(false);
   const handleAmountChange = async () => {
-    let bank = getValues("bank")?.value;
-
-    if (bank == null) {
-      const { from_trade_methods } =
-        await apiClient.numma.currencyExchange.currencyExchanges();
-
-      bank = from_trade_methods[0].trade_method;
-    }
-
     const data = await apiClient.numma.currencyExchange.cryptoExchange({
       fromCrypto: getValues("coinType")?.value,
       amount: getValues("amountOfMoney"),

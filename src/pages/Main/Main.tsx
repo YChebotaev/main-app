@@ -14,19 +14,13 @@ import { BuyToken } from "./BuyToken";
 import { Events } from "./Events";
 import { OtherTokens } from './OtherTokens'
 import { Footer } from './Footer'
-import { useTelegramUser } from '../../hooks'
 
 import classes from "./Main.module.css";
 // import { Button } from "../../components/Button";
 
 export const Main: FC = () => {
-  const user = useTelegramUser()
-
   return (
     <div className={classes.main}>
-      {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
-      {/* <pre>{window.location.href}</pre> */}
-
       <Head />
       <WhatIsNumma />
       <DarkBlock style={{ paddingBottom: 20 }}>

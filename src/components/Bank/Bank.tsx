@@ -1,4 +1,4 @@
-import { useState, useRef, type FC } from "react";
+import { useState, useRef, type FC, useEffect } from "react";
 import { useController, type Control } from "react-hook-form";
 import { useQuery } from "react-query";
 
@@ -36,16 +36,28 @@ import classes from "./Bank.module.css";
 //   },
 // ];
 
-const NAME = 'bank'
+const NAME = "bank";
 
-export const Bank: FC<{ control: Control }> = ({ control }) => {
+export const Bank: FC<{
+  control: Control;
+  fromFiat?: string;
+  onChange?(): void;
+}> = ({ control, fromFiat, onChange }) => {
   const apiClient = useApiClient();
-  const isFirstTimeRender = useRef(true)
-  const { field } = useController({ control, name: NAME })
-  const { data } = useQuery(
-    ["currency_exchange", "currency_exchanges"],
+  const isFirstTimeRender = useRef(true);
+  const { field } = useController({ control, name: NAME });
+  const { data, isLoading } = useQuery(
+    [
+      "currency_exchange",
+      "currency_exchanges",
+      {
+        fromFiat,
+      },
+    ],
     async () => {
-      const data = await apiClient.numma.currencyExchange.currencyExchanges();
+      const data = await apiClient.numma.currencyExchange.currencyExchanges({
+        fromFiat,
+      });
 
       return data;
     },
@@ -60,18 +72,25 @@ export const Bank: FC<{ control: Control }> = ({ control }) => {
       },
       onSuccess(data) {
         if (isFirstTimeRender.current) {
-          const firstValue = data[0]
+          const firstValue = data[0];
 
-          field.onChange(firstValue)
+          field.onChange(firstValue);
 
-          Reflect.set(isFirstTimeRender, 'current', false)
+          Reflect.set(isFirstTimeRender, "current", false);
         }
-      }
+      },
     },
   );
 
   const [referenceElement, setReferenceElement] =
     useState<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (isLoading === false) {
+      field.onChange(data![0]);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fromFiat, isLoading, data]);
 
   return (
     <ControlComponent ref={setReferenceElement} className={classes.bank}>
@@ -88,6 +107,7 @@ export const Bank: FC<{ control: Control }> = ({ control }) => {
             <span className={classes.option}>{name}</span>
           )}
           currentItemClassName={classes.selectorCurrentItem}
+          onChange={onChange}
         />
       </div>
     </ControlComponent>
