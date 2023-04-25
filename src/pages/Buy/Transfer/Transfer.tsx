@@ -156,7 +156,7 @@ export const Transfer: FC = () => {
                 userId,
                 amountOfMoney: getValues("amountOfMoney"),
                 mainCourse: data?.client_main as number,
-                bank: getValues("bank")?.value,
+                bank: getValues("bank")?.name,
                 coinType: getValues("coinType")?.value,
                 getMoney: getValues("getMoney"),
                 phoneNumber: getValues("phoneNumber"),
