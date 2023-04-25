@@ -148,6 +148,7 @@ export const Transfer: FC = () => {
           <Button
             type="submit"
             className={classes.button}
+            disabled={!watch("phoneNumber")}
             onClick={async (e) => {
               e.preventDefault();
 

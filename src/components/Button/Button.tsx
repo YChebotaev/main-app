@@ -16,17 +16,29 @@ export const Button: FC<{
   className?: string;
   style?: CSSProperties;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
   children: ReactNode;
   onClick?(
     e: ReactMouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
   ): void;
-}> = ({ to, target, unstyled, className, style, type, children, onClick }) => {
+}> = ({
+  to,
+  target,
+  unstyled,
+  className,
+  style,
+  type,
+  disabled,
+  children,
+  onClick,
+}) => {
   if (to) {
     return (
       <Link
         to={to}
         target={target}
-        className={cn(!unstyled && classes.button, className)}
+        aria-disabled={disabled}
+        className={cn(!unstyled && classes.button, disabled && classes.disabled, className)}
         style={style}
         onClick={onClick}
       >
@@ -36,9 +48,10 @@ export const Button: FC<{
   } else {
     return (
       <button
-        className={cn(!unstyled && classes.button, className)}
+        className={cn(!unstyled && classes.button, disabled && classes.disabled, className)}
         style={style}
         type={type}
+        disabled={disabled}
         onClick={onClick}
       >
         {children}

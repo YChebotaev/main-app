@@ -90,9 +90,8 @@ export const Crypto: FC = () => {
             isCrypto
             control={control}
             onFocus={() => clearErrors("amountOfMoney")}
-            onCurrencyChange={() => {
-              handleAmountChange()
-            }}
+            onBlur={handleAmountChange}
+            onCurrencyChange={handleAmountChange}
           />
         </div>
         <div className={classes.receiveWrapper}>
