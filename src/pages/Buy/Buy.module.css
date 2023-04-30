@@ -23,9 +23,7 @@
 .roundBlock {
 }
 
-.header {
-  color: #ad81f7;
-}
+.header {}
 
 .roundText {
   margin-top: 10px;
@@ -67,7 +65,7 @@
 }
 
 .processBlockWrapper {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   padding: 0 20px;
 }
 
@@ -119,6 +117,7 @@
 
 .faqTitle {
   font-size: 16px;
+  color: #B57FFF;
 }
 
 .faqText {
@@ -158,4 +157,11 @@
 
 .ratingsHeader {
   margin-bottom: 10px;
+}
+
+.block1 {
+  background: linear-gradient(190.83deg, rgba(173, 129, 247, 0.084) -19.95%, rgba(27, 22, 32, 0.4) 84.57%), #1D1723;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
 }

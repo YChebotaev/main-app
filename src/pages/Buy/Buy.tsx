@@ -11,7 +11,7 @@ import { Transfer } from "./Transfer";
 // import { Profile } from "../../components/Profile";
 import { Samopiar } from "../../components/Samopiar";
 import { MediaList } from "../../components/MediaList";
-import { RatingsList } from '../../components/RatingsList'
+import { RatingsList } from "../../components/RatingsList";
 
 import classes from "./Buy.module.css";
 
@@ -25,7 +25,7 @@ export const Buy: FC = () => (
       <Profile />
     </div> */}
     <div className={classes.tabs}>
-      <Header>Покупка токена по рынку</Header>
+      <Header>Покупка токена</Header>
       <div className={classes.tabsWrapper}>
         <Tabs
           initialTab="transfer"
@@ -57,51 +57,53 @@ export const Buy: FC = () => (
         </Tabs>
       </div>
     </div>
-    <div className={classes.processBlockWrapper}>
-      <Header level={2} className={classes.header}>
-        Как происходит покупка токена
-      </Header>
-      <div className={classes.processBlock}>
-        <div className={classes.processLine}>
-          <div className={classes.processNumber}>01/</div>
-          <div className={classes.processText}>
-            Вы привязываете в боте свой крипто-кошелек
+    <div className={classes.block1}>
+      <div className={classes.processBlockWrapper}>
+        <Header level={2} className={classes.header}>
+          Как происходит покупка токена
+        </Header>
+        <div className={classes.processBlock}>
+          <div className={classes.processLine}>
+            <div className={classes.processNumber}>01/</div>
+            <div className={classes.processText}>
+              Вы привязываете в боте свой крипто-кошелек
+            </div>
           </div>
-        </div>
-        <div className={classes.processLine}>
-          <div className={classes.processNumber}>02/</div>
-          <div className={classes.processText}>
-            Совершаете перевод в удобном вам формате
+          <div className={classes.processLine}>
+            <div className={classes.processNumber}>02/</div>
+            <div className={classes.processText}>
+              Совершаете перевод в удобном вам формате
+            </div>
           </div>
-        </div>
-        <div className={classes.processLine}>
-          <div className={classes.processNumber}>03/</div>
-          <div className={classes.processText}>
-            Мы фиксируем за вами сумму токенов на вашу сумму инвестиций в момент
-            сделки
+          <div className={classes.processLine}>
+            <div className={classes.processNumber}>03/</div>
+            <div className={classes.processText}>
+              Мы фиксируем за вами сумму токенов на вашу сумму инвестиций в
+              момент сделки
+            </div>
           </div>
-        </div>
-        <div className={classes.processLine}>
-          <div className={classes.processNumber}>04/</div>
-          <div className={classes.processText}>
-            Токен упадёт вам в кошелек в течение часа по цене, зафиксированной в
-            момент сделки
+          <div className={classes.processLine}>
+            <div className={classes.processNumber}>04/</div>
+            <div className={classes.processText}>
+              Токен упадёт вам в кошелек в течение часа по цене, зафиксированной
+              в момент сделки
+            </div>
           </div>
         </div>
       </div>
+      <div className={classes.samopiarWrapper}>
+        <Header className={classes.samopiarHeader}>О токене MAIN</Header>
+        <Samopiar />
+      </div>
     </div>
-    <div className={classes.samopiarWrapper}>
-      <Header className={classes.samopiarHeader}>О токене MAIN</Header>
-      <Samopiar />
-    </div>
-    <div className={classes.mediaWrapper}>
+    {/* <div className={classes.mediaWrapper}>
       <Header className={classes.mediaHeader}>О MAIN пишут</Header>
       <MediaList />
     </div>
     <div className={classes.ratingsWrapper}>
       <Header className={classes.ratingsHeader}>Крипто рейтинги</Header>
       <RatingsList />
-    </div>
+    </div> */}
     {/* <div className={classes.roundBlockWrapper}>
       <div className={classes.roundBlock}>
         <Header level={2} className={classes.header}>
@@ -167,7 +169,7 @@ export const Buy: FC = () => (
       </div>
     </div> */}
     <div className={classes.faqBlockWrapper}>
-      <Header level={2} className={classes.header}>
+      <Header level={1} className={classes.header}>
         FAQ
       </Header>
       <div className={classes.faqBlock}>
