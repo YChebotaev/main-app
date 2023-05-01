@@ -11,7 +11,7 @@ import { Head } from "./Head";
 import { WhatIsNumma } from "./WhatIsNumma";
 import { DarkBlock } from "./DarkBlock";
 import { BuyToken } from "./BuyToken";
-import { Events } from "./Events";
+// import { Events } from "./Events";
 import { OtherTokens } from './OtherTokens'
 import { Footer } from './Footer'
 
@@ -25,7 +25,7 @@ export const Main: FC = () => {
       <WhatIsNumma />
       <DarkBlock style={{ paddingBottom: 20 }}>
         <BuyToken />
-        <Events />
+        {/* <Events /> */}
       </DarkBlock>
       <OtherTokens />
       <Footer />
