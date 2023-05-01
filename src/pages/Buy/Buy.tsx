@@ -168,6 +168,7 @@ export const Buy: FC = () => (
         </div>
       </div>
     </div> */}
+    <div className={classes.separator} />
     <div className={classes.faqBlockWrapper}>
       <Header level={1} className={classes.header}>
         FAQ
